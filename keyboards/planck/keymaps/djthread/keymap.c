@@ -41,6 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     Window Mgt       _____   ____   System
     */
   [_BASE] = LAYOUT_planck_grid_90deg_right(
+<<<<<<< HEAD
     KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8,
     KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8,
     KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8,
@@ -53,12 +54,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
 /** /M_DESKTOP, M_EXPOSE, M_BARTENDERSHOW, M_CMD_H,
+=======
+    T_L1, T_L2, T_L3, T_L4, T_L5, M_LOCK, M_BUILDINST, T_L8,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+/**/M_DESKTOP, M_EXPOSE, M_BARTENDERSHOW, M_CMD_H,
+>>>>>>> trying to get led to work
     M_KEYBTERM, M_ZOOM, M_MTOGG, M_MNEXT,
     M_TABPREV,     KC_UP,       M_TABNEXT,     KC_NO,
     KC_LEFT,     KC_DOWN,     KC_RIGHT,    KC_NO,
     M_BACK,      M_FWD,       M_COPY,      M_PASTE,
     M_CMDTAB,    M_CMDBT,     KC_NO,       MO(_ALT)
+<<<<<<< HEAD
     */
+=======
+>>>>>>> trying to get led to work
   ),
 
   [_ALT] = LAYOUT_planck_grid_90deg_right(

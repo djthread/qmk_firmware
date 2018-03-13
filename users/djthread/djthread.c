@@ -113,8 +113,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SS_LGUI(SS_TAP(X_TAB)));      // switch back to previous app
       return false;
     case M_LOCK:
-      //SEND_STRING(SS_LCTRL("`"));
-      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI("p")))));
+      //SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI("p")))));
+      SEND_STRING(SS_LCTRL("`"));
       return false;
     case M_ZULIP:
       SEND_STRING(SS_LCTRL(SS_LALT("/")));
@@ -150,9 +150,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
     case M_TTREE:
       teams();
+<<<<<<< HEAD
       // SEND_STRING(SS_TAP(X_ESCAPE));
       // wait_ms(100);
       SEND_STRING(SS_LGUI(SS_LSFT("u")));
+=======
+      SEND_STRING(SS_TAP(X_ESCAPE));
+      wait_ms(100);
+      SEND_STRING(SS_LALT("d"));
+>>>>>>> trying to get led to work
       wait_ms(100);
       SEND_STRING(".dlkfod kod");
       wait_ms(400);
@@ -234,16 +240,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_1)))))); return false;
     case M_PBOT_OFF:
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_0)))))); return false;
+<<<<<<< HEAD
     case M_ZOOMAPP:
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_KP_5)))))); return false;
 /*
     case M_ZOOMQUARTER: ;
       / *
+=======
+    case M_ZOOMQUARTER: ;
+/*
+>>>>>>> trying to get led to work
       static report_mouse_t mouse_report = {};
       mouse_report.x = 0;
       mouse_report.y = 0;
       host_mouse_send(&mouse_report);
+<<<<<<< HEAD
       * /
+=======
+      */
+>>>>>>> trying to get led to work
 
       SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("y"))));  // win to top left
       SEND_STRING(SS_LGUI(SS_LALT(  // zoom
@@ -253,7 +268,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SS_TAP(X_RBRACKET)
       )));
       return false;
+<<<<<<< HEAD
 */
+=======
+>>>>>>> trying to get led to work
   }
 
   return process_record_keymap(keycode, record);
