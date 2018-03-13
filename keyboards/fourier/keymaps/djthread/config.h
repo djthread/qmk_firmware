@@ -2,13 +2,18 @@
 #define CONFIG_USER_H
 
 #include "../../config.h"
+// #include "config_common.h"
+
+/* Use I2C or Serial, not both */
+
+#define USE_SERIAL
+// #define USE_I2C
+
 
 // place overrides here
 
-#define BACKLIGHT_PIN B7
-#define BACKLIGHT_BREATHING
-#define BACKLIGHT_LEVELS 3
-#define TAPPING_TERM 150
+#define TAPPING_TERM 120
+// #define RETRO_TAPPING
 
 // #define MOUSEKEY_DELAY 6
 // #define MOUSEKEY_MAX_SPEED 3
