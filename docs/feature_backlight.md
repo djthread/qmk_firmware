@@ -18,6 +18,8 @@ These keycodes control the backlight. Most keyboards use this for single color i
 
 Note that for backlight breathing, you need to have `#define BACKLIGHT_BREATHING` in your config.h.
 
+Note also that `BACKLIGHT_ENABLE` must be `yes` in `rules.mk`.
+
 ## Configuration Options in `config.h`
 
 * `BACKLIGHT_PIN B7` defines the pin that controlls the LEDs. Unless you design your own keyboard, you don't need to set this.
