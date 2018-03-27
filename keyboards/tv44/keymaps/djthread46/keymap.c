@@ -16,6 +16,8 @@ enum custom_keycodes {
   M_MPREV,
   M_MTOGG,
   M_MNEXT,
+  M_TABPREV,
+  M_TABNEXT
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -35,6 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,
     LT(1, KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, LT(1, KC_QUOT),
     KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, //SFT_T(KC_ENT),
+    /* KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, SFT_T(KC_ENT), */
     MO(3), KC_LCTL, KC_LALT, KC_LGUI, LT(2, KC_ENT), KC_SPC, KC_RGUI, KC_RALT, KC_RCTL, MO(3)),
 
   /*  1: NUMBERS LAYER
@@ -80,13 +83,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * | ZOOM      |WLEFT |WRIGHT| WBL  | WBR  |      |      |      |      |      |      |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * |      |        |       |M_MPREV| M_MTOGG  |    M_MNEXT   |        |      |      |       |
+   * |      | TABPREV|TABNEXT|M_MPREV| M_MTOGG  |    M_MNEXT   |        |      |      |       |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP_ARROW_COMMAND(
     M_CMDBT, M_WMAX, M_WNEXTMON, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_DEL,
     RESET, M_EXPOSE, M_DESKTOP, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, TO(4),
     M_ZOOM, M_WLEFT, M_WRIGHT, M_WBL, M_WBR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, M_MPREV, M_MTOGG, M_MNEXT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
+    KC_TRNS, M_TABPREV, M_TABNEXT, M_MPREV, M_MTOGG, M_MNEXT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 
 
 
@@ -191,6 +194,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SEND_STRING(SS_TAP(X_F16)); return false;
       case M_MTOGG:
         SEND_STRING(SS_TAP(X_F15)); return false;
+      case M_TABPREV:
+        SEND_STRING(SS_TAP(X_KP_1)); return false;
+      case M_TABNEXT:
+        SEND_STRING(SS_TAP(X_KP_2)); return false;
     }
   }
 
