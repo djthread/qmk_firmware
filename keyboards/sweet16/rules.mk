@@ -55,4 +55,5 @@ BACKLIGHT_ENABLE = no  # Enable keyboard backlight functionality
 AUDIO_ENABLE = no
 RGBLIGHT_ENABLE = yes
 
+# djthread added 2018-03-29 - wth, guys, doesn't everyone need this?
 BOOTLOADER = caterina
