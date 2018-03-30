@@ -22,6 +22,8 @@ enum custom_keycodes {
   M_MNEXT,
   M_TABPREV,
   M_TABNEXT,
+  M_BACK,
+  M_FWD,
   M_RSTEX
 };
 

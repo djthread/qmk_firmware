@@ -8,14 +8,14 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT_ortho_4x4(
         M_WLEFT,     M_WRIGHT,    M_WMAX,      M_WNEXTMON,
-        KC_TRNS,     KC_TRNS,     KC_A,        RESET,
-        M_ZOOM,      KC_TRNS,     M_MTOGG,     M_MNEXT,
+        KC_TRNS,     KC_TRNS,     M_ZOOM,      RESET,
+        M_BACK,      M_FWD,       M_MTOGG,     M_MNEXT,
         M_TABPREV,   M_TABNEXT,   M_RSTEX,     MO(1)
     ),
 
     LAYOUT_ortho_4x4(
         KC_TRNS,     KC_TRNS,     KC_TRNS,     KC_TRNS,
-        KC_TRNS,     KC_TRNS,     KC_TRNS,     KC_MAKE,
+        KC_TRNS,     KC_TRNS,     KC_TRNS,     KC_TRNS,
         M_WTL,       M_WTR,       KC_TRNS,     M_MPREV,
         M_WBL,       M_WBR,       KC_TRNS,     KC_TRNS
     )

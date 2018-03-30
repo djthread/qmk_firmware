@@ -48,23 +48,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_TAP(X_KP_1)); return false;
     case M_TABNEXT:
       SEND_STRING(SS_TAP(X_KP_2)); return false;
+    case M_BACK:
+      SEND_STRING(SS_LGUI(SS_TAP(X_LEFT))); return false;
+    case M_FWD:
+      SEND_STRING(SS_LGUI(SS_TAP(X_RIGHT))); return false;
     case M_RSTEX:  // restart elixir
       SEND_STRING(SS_LCTRL(SS_LALT("k")));  // switch to iterm
       _delay_ms(250);
       SEND_STRING(SS_LCTRL("\\")      // ctrl-\ kills erlang
         SS_TAP(X_UP) SS_TAP(X_ENTER)  // recall + execute last command
         SS_LGUI(SS_TAP(X_TAB)));      // switch back to previous app
-      return false;
-    case KC_MAKE:
-      SEND_STRING("make " QMK_KEYBOARD ":" QMK_KEYMAP
-#if (defined(BOOTLOADER_DFU) || defined(BOOTLOADER_LUFA_DFU) || defined(BOOTLOADER_QMK_DFU))
-        ":dfu "
-#elif defined(BOOTLOADER_HALFKAY)
-        ":teensy "
-#elif defined(BOOTLOADER_CATERINA)
-        ":avrdude "
-#endif
-        SS_TAP(X_ENTER));
       return false;
   }
 
