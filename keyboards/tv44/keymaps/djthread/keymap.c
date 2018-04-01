@@ -1,23 +1,8 @@
 #include "tv44.h"
+#include "djthread.h"
 
-enum custom_keycodes {
-  M_ZOOM = SAFE_RANGE,
-  M_CMDBT,
-  M_EXPOSE,
-  M_DESKTOP,
-  M_WMAX,
-  M_WNEXTMON,
-  M_WLEFT,
-  M_WRIGHT,
-  M_WTL,
-  M_WTR,
-  M_WBL,
-  M_WBR,
-  M_MPREV,
-  M_MTOGG,
-  M_MNEXT,
-  M_TABPREV,
-  M_TABNEXT
+enum custom_keycodes2 {
+  M_BUILDINST = NEW_SAFE_RANGE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -68,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |       |       |        |           |             |        |      |       |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
-    KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_PGUP, KC_LPRN, KC_RPRN, KC_TRNS,
+    KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_PGUP, KC_LPRN, KC_RPRN, KC_DEL,
     KC_TRNS, KC_PIPE, KC_DQUO, KC_LCBR, KC_RCBR, KC_UNDS, KC_PLUS, KC_HOME, KC_PGDN, KC_END, KC_ASTR, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
@@ -76,19 +61,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*  3: BONUS LAYER
    *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
-   * | CMD-`   |WMAX |WNXMON|      |       |      |      |      |      |      |LEDST | DELETE  |
+   * | CMD-`   |WLEFT |WRIGHT|      |       |      |      |      |      |      |LEDST | DELETE  |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * | RESET   | EXPOS| DESKT| WTL  | WTR  |      |      |      |      |      |BREATH|TODVORAK |
+   * |TODVORAK | WMAX |WNXMON|WTL  | WTR  |      |      |      |      |      |BREATH|  BUILDINST  |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * | ZOOM      |WLEFT |WRIGHT| WBL  | WBR  |      |      |      |      |      |      |       |
+   * | ZOOM      |EXPOS |DESKT | WBL  | WBR  |      |      |      |      |      |      |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |TABPREV|TABNEXT|M_MPREV| M_MTOGG  |    M_MNEXT   |        |      |       |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
-    M_CMDBT, M_WMAX, M_WNEXTMON, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_DEL,
-    RESET, M_EXPOSE, M_DESKTOP, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, TO(4),
-    M_ZOOM, M_WLEFT, M_WRIGHT, M_WBL, M_WBR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    M_CMDBT, M_WLEFT, M_WRIGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_TRNS,
+    TO(4), M_WMAX, M_WNEXTMON, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, M_BUILDINST,
+    M_ZOOM, M_EXPOSE, M_DESKTOP, M_WBL, M_WBR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     M_TABPREV, M_TABNEXT, M_MPREV, M_MTOGG, M_MNEXT, KC_TRNS, KC_TRNS, KC_TRNS),
+
 
 
 
@@ -160,43 +146,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 };
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
-    switch(keycode) {
-      case M_CMDBT:
-        SEND_STRING(SS_LGUI("`")); return false;
-      case M_ZOOM:
-        SEND_STRING(SS_LCTRL("z")); return false;
-      case M_EXPOSE:
-        SEND_STRING(SS_LCTRL(SS_LALT("a"))); return false;
-      case M_DESKTOP:
-        SEND_STRING(SS_LCTRL(SS_LALT("s"))); return false;
-      case M_WMAX:
-        SEND_STRING(SS_LCTRL(SS_LSFT(SS_TAP(X_UP)))); return false;
-      case M_WNEXTMON:
-        SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT("=")))); return false;
-      case M_WLEFT:
-        SEND_STRING(SS_LCTRL(SS_LSFT(SS_TAP(X_LEFT)))); return false;
-      case M_WRIGHT:
-        SEND_STRING(SS_LCTRL(SS_LSFT(SS_TAP(X_RIGHT)))); return false;
-      case M_WTL:
-        SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("y")))); return false;
-      case M_WTR:
-        SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("u")))); return false;
-      case M_WBL:
-        SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("h")))); return false;
-      case M_WBR:
-        SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("j")))); return false;
-      case M_MPREV:
-        SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("2")))); return false;
-      case M_MNEXT:
-        SEND_STRING(SS_TAP(X_F16)); return false;
-      case M_MTOGG:
-        SEND_STRING(SS_TAP(X_F15)); return false;
-      case M_TABPREV:
-        SEND_STRING(SS_TAP(X_KP_1)); return false;
-      case M_TABNEXT:
-        SEND_STRING(SS_TAP(X_KP_2)); return false;
+    switch (keycode) {
+      case M_BUILDINST:
+        SEND_STRING("mavd k.44ZhckjodahZhyf" SS_TAP(X_ENTER));
+        reset_keyboard();
+        return false;
     }
   }
 
