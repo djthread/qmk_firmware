@@ -65,14 +65,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |TODVORAK | WMAX |WNXMON|WTL  | WTR  |      |      |      |      |      |BREATH|  BUILDINST  |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * | ZOOM      |EXPOS |DESKT | WBL  | WBR  |      |      |      |      |      |      |       |
+   * | ZOOM      |DESKT |EXPOSE| WBL  | WBR  |      |      |      |      |      |      |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |TABPREV|TABNEXT|M_MPREV| M_MTOGG  |    M_MNEXT   |        |      |       |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
     M_CMDBT, M_WLEFT, M_WRIGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_TRNS,
     TO(4), M_WMAX, M_WNEXTMON, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, M_BUILDINST,
-    M_ZOOM, M_EXPOSE, M_DESKTOP, M_WBL, M_WBR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    M_ZOOM, M_DESKTOP, M_EXPOSE, M_WBL, M_WBR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     M_TABPREV, M_TABNEXT, M_MPREV, M_MTOGG, M_MNEXT, KC_TRNS, KC_TRNS, KC_TRNS),
 
 
