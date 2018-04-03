@@ -24,6 +24,7 @@ enum custom_keycodes {
   M_BACK,
   M_FWD,
   M_RSTEX,
+  M_DISMISSNOTI,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 

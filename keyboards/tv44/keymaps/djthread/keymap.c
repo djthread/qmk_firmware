@@ -77,19 +77,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*  4: MACRO LAYER
    *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
-   * |         |     |      |      |       |      |      |      |      |      |      |         |
+   * |closenotif|    |      |      |       |      |      |      |      |      |      |         |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |         |      |       |     |      |      |      |      |      |      |      |         |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           |      |      |      |      |      |      |      |      |      |      | RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * |   BACK     |  FWD   |       |             |              |  Vol-  |         |  Vol+     |
+   * |   BACK     |  FWD   |       |             |    MUTE      |  Vol-  |         |  Vol+     |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    M_DISMISSNOTI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_RSTEX,
-    M_BACK, M_FWD, KC_TRNS, KC_TRNS, KC_TRNS, KC__VOLDOWN, KC_TRNS, KC__VOLUP),
+    M_BACK, M_FWD, KC_TRNS, KC_TRNS, KC__MUTE, KC__VOLDOWN, KC_TRNS, KC__VOLUP),
 
 
 
