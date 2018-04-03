@@ -52,6 +52,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI(SS_TAP(X_LEFT))); return false;
     case M_FWD:
       SEND_STRING(SS_LGUI(SS_TAP(X_RIGHT))); return false;
+    case M_DISMISSNOTI:
+      SEND_STRING(SS_LCTRL(SS_LALT(SS_LGUI(SS_LSFT("h"))))); return false;
     case M_RSTEX:  // restart elixir
       SEND_STRING(SS_LCTRL(SS_LALT("k")));  // switch to iterm
       _delay_ms(250);
