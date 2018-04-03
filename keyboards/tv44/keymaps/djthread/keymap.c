@@ -59,20 +59,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 
   /*  3: BONUS LAYER
-   *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
-   * | CMD-`   |WLEFT |WRIGHT|      |       |      |      |      |      |      |LEDST | DELETE  |
+   * | CMD-`   |      |MBTN2 | MUP  | MBTN1 |MWHUP |      |      | WTL  | WTR  | DELETE  |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |TODVORAK | WMAX |WNXMON|WTL  | WTR  |      |      |      |      |      |BREATH|  BUILDINST  |
+   * |TODVORAK |MBTN3 |MLEFT|MDOWN|MRIGHT|MWHDN |      |      | WBL  | WBR  |  BUILDINST  |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * | ZOOM      |DESKT |EXPOSE| WBL  | WBR  |      |      |      |      |      |      |       |
+   * | ZOOM      |DESKT |EXPOSE| WLEFT|WRIGHT| WMAX|WNXMON|     |      |      |      |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |TABPREV|TABNEXT|M_MPREV| M_MTOGG  |    M_MNEXT   |        |      |       |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
-    M_CMDBT, M_WLEFT, M_WRIGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_TRNS,
-    TO(4), M_WMAX, M_WNEXTMON, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, M_BUILDINST,
-    M_ZOOM, M_DESKTOP, M_EXPOSE, M_WBL, M_WBR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    M_CMDBT, KC_TRNS, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS,
+    TO(4), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_TRNS, KC_TRNS, KC_TRNS, M_WBL, M_WBR, M_BUILDINST,
+    M_ZOOM, M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WNEXTMON, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, BL_STEP, KC_TRNS,
     M_TABPREV, M_TABNEXT, M_MPREV, M_MTOGG, M_MNEXT, KC_TRNS, KC_TRNS, KC_TRNS),
 
 
@@ -131,17 +130,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*  7: BONUS LAYER
    *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
-   * | CMD-`   |     |      |      |       |      |      |      |      |      |LEDST | DELETE  |
+   * | CMD-`   |     | MBTN2| MUP  | MBTN1 |MWHUP |      |      |      |      |LEDST | DELETE  |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |         |      |      |      |      |      |      |      |      |      |BREATH| TOQWERTY |
+   * |         |MBTN3 | MLEFT |MDOWN|MRIGHT|MWHDN |      |      |      |      |BREATH| TOQWERTY|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           |      |      |      |      |      |      |      |      |      |      |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |        |       |       |          |              |        |      |       |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
-    M_CMDBT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_DEL,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, TO(0),
+    M_CMDBT, KC_TRNS, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_DEL,
+    KC_TRNS, KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, TO(0),
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 };
