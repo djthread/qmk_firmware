@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |   ~    |   !  |   @  |   #  |   $  |   %  |   ^  |   &  | PGUP |   (  |   )  |  DELETE  |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |        |   |  |   "  |   {  |   }  |   _  |   +  | HOME | PGDN |  END |   *  |          |
+   * |  CMD-` |   |  |   "  |   {  |   }  |   _  |   +  | HOME | PGDN |  END |   *  |          |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           |DESKT |EXPOSE| WLEFT|WRIGHT| WMAX|WNXMON|      |      |      |       |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
@@ -54,24 +54,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
     KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_PGUP, KC_LPRN, KC_RPRN, KC_DEL,
-    KC_TRNS, KC_PIPE, KC_DQUO, KC_LCBR, KC_RCBR, KC_UNDS, KC_PLUS, KC_HOME, KC_PGDN, KC_END, KC_ASTR, KC_TRNS,
+    M_CMDBT, KC_PIPE, KC_DQUO, KC_LCBR, KC_RCBR, KC_UNDS, KC_PLUS, KC_HOME, KC_PGDN, KC_END, KC_ASTR, KC_TRNS,
     KC_TRNS, M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, KC_TRNS, KC_TRNS, BL_BRTG, BL_STEP, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_ZOOM, KC_TRNS, KC_TRNS, KC_TRNS),
 
   /*  3: BONUS LAYER
    * ,---------+------+-----+------+------+------+------+------+------+------+------+---------.
-   * | CMD-`   |      |MBTN2 | MUP  | MBTN1 |MWHUP |      |      | WTL  | WTR |                |
+   * |         |      |MBTN2 | MUP  | MBTN1 |MWHUP |      |      | WTL  | WTR |                |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |TODVORAK |MBTN3 |MLEFT |MDOWN |MRIGHT|MWHDN |      |       |      | WBL  | WBR  |BUILDINST|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           |      |      |      |      |      |      |      |      |      |      |       |
+   * |           |      |      |      |      |      |      |      |      |      |      | LOCK  |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |  TABPREV   |TABNEXT|M_MPREV|  M_MTOGG    |    M_MNEXT   | BRIGH- | BRIGH+  |            |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
-    M_CMDBT, KC_TRNS, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS,
     TO(5), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_TRNS, KC_TRNS, KC_TRNS, M_WBL, M_WBR, M_BUILDINST,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_LOCK,
     M_TABPREV, M_TABNEXT, M_MPREV, M_MTOGG, M_MNEXT, KC_F14, KC_F15, KC_TRNS),
 
   /*  4: MACRO LAYER
