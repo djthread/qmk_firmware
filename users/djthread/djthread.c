@@ -61,6 +61,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SS_TAP(X_UP) SS_TAP(X_ENTER)  // recall + execute last command
         SS_LGUI(SS_TAP(X_TAB)));      // switch back to previous app
       return false;
+    case M_LOCK:
+      SEND_STRING(SS_LCTRL("`"));
+      return false;
   }
 
   return process_record_keymap(keycode, record);
