@@ -66,13 +66,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           |      |      |      |      |      |      |      |      |      |      |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * |  TABPREV   |TABNEXT|M_MPREV|  M_MTOGG    |    M_MNEXT   |        |         |            |
+   * |  TABPREV   |TABNEXT|M_MPREV|  M_MTOGG    |    M_MNEXT   | BRIGH- | BRIGH+  |            |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
     M_CMDBT, KC_TRNS, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS,
     TO(5), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_TRNS, KC_TRNS, KC_TRNS, M_WBL, M_WBR, M_BUILDINST,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    M_TABPREV, M_TABNEXT, M_MPREV, M_MTOGG, M_MNEXT, KC_TRNS, KC_TRNS, KC_TRNS),
+    M_TABPREV, M_TABNEXT, M_MPREV, M_MTOGG, M_MNEXT, KC_F14, KC_F15, KC_TRNS),
 
   /*  4: MACRO LAYER
    *
@@ -81,15 +81,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |         |      |       |     |      |      |      |      |      |      |      |         |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           |      |      |      |      |      |      |      |      |      |      |       |
+   * |           |      |      |      |      |      |      |      |      |      |      | RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * |   BACK     |  FWD   |       |             |              |        |  RSTEX  |           |
+   * |   BACK     |  FWD   |       |             |              |  Vol-  |         |  Vol+     |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    M_BACK, M_FWD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_RSTEX),
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_RSTEX,
+    M_BACK, M_FWD, KC_TRNS, KC_TRNS, KC_TRNS, KC__VOLDOWN, KC_TRNS, KC__VOLUP),
 
 
 
