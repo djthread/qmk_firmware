@@ -19,9 +19,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_ZOOM:
       SEND_STRING(SS_LCTRL("z")); return false;
     case M_EXPOSE:
-      SEND_STRING(SS_LCTRL(SS_LALT("a"))); return false;
-    case M_DESKTOP:
       SEND_STRING(SS_LCTRL(SS_LALT("s"))); return false;
+    case M_DESKTOP:
+      SEND_STRING(SS_LCTRL(SS_LALT("a"))); return false;
     case M_WMAX:
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_TAP(X_UP)))); return false;
     case M_WNEXTMON:
