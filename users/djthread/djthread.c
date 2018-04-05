@@ -98,6 +98,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SS_LALT("l")
       );
       return false;
+    case M_SEARCHNOTES:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_TAP(X_HOME)))));
+      return false;
+    case M_NEWNOTE:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_TAP(X_END)))));
+      return false;
   }
 
   return process_record_keymap(keycode, record);

@@ -81,14 +81,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |         |      |       |     |      |      |      |      |      |DVORAK|      |         |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           | TMSG |TTREE |      |      |      |      |      |      |      |      | RSTEX |
+   * |           | TMSG |TTREE |      |      |      |      |      |      |SrchNo|NewNot| RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |   BACK     |  FWD   |       |             |    MUTE      |  Vol-  |         |  Vol+     |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
     M_DISMISSNOTI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, BL_STEP, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TO(5), KC_TRNS, KC_TRNS,
-    KC_TRNS, M_TMSG, M_TTREE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_RSTEX,
+    KC_TRNS, M_TMSG, M_TTREE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_RSTEX,
     M_BACK, M_FWD, KC_TRNS, KC_TRNS, KC__MUTE, KC__VOLDOWN, KC_TRNS, KC__VOLUP),
 
 
