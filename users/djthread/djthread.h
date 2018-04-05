@@ -28,6 +28,8 @@ enum custom_keycodes {
   M_LOCK,
   M_TMSG,
   M_TTREE,
+  M_SEARCHNOTES,
+  M_NEWNOTE,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
