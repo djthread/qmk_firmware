@@ -64,6 +64,40 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_LOCK:
       SEND_STRING(SS_LCTRL("`"));
       return false;
+    case M_TTREE:
+      SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
+      _delay_ms(200);
+      SEND_STRING("kdam;" SS_TAP(X_ENTER));
+      _delay_ms(1000);
+      SEND_STRING(
+        SS_TAP(X_TAB)
+        SS_TAP(X_TAB)
+        SS_TAP(X_TAB)
+        SS_LALT("3")
+      );
+      _delay_ms(1000);
+      SEND_STRING(SS_LALT("d"));  // search
+      _delay_ms(1000);
+      SEND_STRING(".dlkfod kod");
+      _delay_ms(400);
+      SEND_STRING(
+        SS_TAP(X_DOWN)
+        SS_TAP(X_ENTER)
+        SS_TAP(X_TAB)
+        "i");
+      return false;
+    case M_TMSG:
+      SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
+      _delay_ms(200);
+      SEND_STRING("kdam;" SS_TAP(X_ENTER));
+      _delay_ms(100);
+      SEND_STRING(
+        SS_TAP(X_TAB)
+        SS_TAP(X_TAB)
+        SS_TAP(X_TAB)
+        SS_LALT("l")
+      );
+      return false;
   }
 
   return process_record_keymap(keycode, record);

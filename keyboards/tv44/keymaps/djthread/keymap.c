@@ -60,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /*  3: BONUS LAYER
    * ,---------+------+-----+------+------+------+------+------+------+------+------+---------.
-   * |         |      |MBTN2 | MUP  | MBTN1 |MWHUP |      |      | WTL  | WTR |                |
+   * |         |      |MBTN2 | MUP  | MBTN1 |MWHUP |     |      |     | WTL  | WTR  |          |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |TODVORAK |MBTN3 |MLEFT |MDOWN |MRIGHT|MWHDN |      |       |      | WBL  | WBR  |BUILDINST|
+   * |         |MBTN3 |MLEFT |MDOWN |MRIGHT|MWHDN |      |       |      | WBL  | WBR  |BUILDINST|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           |      |      |      |      |      |      |      |      |      |      | LOCK  |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
@@ -79,16 +79,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |closenotif|    |      |      |       |      |      |      |      |BREATH| STEP |         |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |         |      |       |     |      |      |      |      |      |      |      |         |
+   * |         |      |       |     |      |      |      |      |      |DVORAK|      |         |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           |      |      |      |      |      |      |      |      |      |      | RSTEX |
+   * |           | TMSG |TTREE |      |      |      |      |      |      |      |      | RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |   BACK     |  FWD   |       |             |    MUTE      |  Vol-  |         |  Vol+     |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
     M_DISMISSNOTI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, BL_STEP, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_RSTEX,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TO(5), KC_TRNS, KC_TRNS,
+    KC_TRNS, M_TMSG, M_TTREE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_RSTEX,
     M_BACK, M_FWD, KC_TRNS, KC_TRNS, KC__MUTE, KC__VOLDOWN, KC_TRNS, KC__VOLUP),
 
 
@@ -148,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * | CMD-`   |     | MBTN2| MUP  | MBTN1 |MWHUP |      |      |      |      |LEDST | DELETE  |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * | TOQWERTY |MBTN3 | MLEFT |MDOWN|MRIGHT|MWHDN |      |      |      |      |BREATH|        |
+   * |          |MBTN3 | MLEFT |MDOWN|MRIGHT|MWHDN |      |      |      |      |BREATH|        |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           |      |      |      |      |      |      |      |      |      |      |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
@@ -156,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
     M_CMDBT, KC_TRNS, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_DEL,
-    TO(0), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, KC_TRNS,
+    KC_TRNS, KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 
@@ -165,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |         |     |      |      |       |      |      |      |      |      |      |         |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |         |      |       |     |      |      |      |      |      |      |      |         |
+   * |         |      |       |     |      |      |      |      |      |DVORAK|      |         |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           |      |      |      |      |      |      |      |      |      |      |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
@@ -173,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TO(0), KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     M_BACK, M_FWD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_RSTEX),
 
