@@ -56,7 +56,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL(SS_LALT(SS_LGUI(SS_LSFT("h"))))); return false;
     case M_RSTEX:  // restart elixir
       SEND_STRING(SS_LCTRL(SS_LALT("k")));  // switch to iterm
-      _delay_ms(250);
+      wait_ms(250);
       SEND_STRING(SS_LCTRL("\\")      // ctrl-\ kills erlang
         SS_TAP(X_UP) SS_TAP(X_ENTER)  // recall + execute last command
         SS_LGUI(SS_TAP(X_TAB)));      // switch back to previous app
@@ -66,20 +66,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
     case M_TTREE:
       SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
-      _delay_ms(200);
+      wait_ms(200);
       SEND_STRING("kdam;" SS_TAP(X_ENTER));
-      _delay_ms(1000);
+      wait_ms(1000);
       SEND_STRING(
         SS_TAP(X_TAB)
         SS_TAP(X_TAB)
         SS_TAP(X_TAB)
         SS_LALT("3")
       );
-      _delay_ms(1000);
+      wait_ms(1000);
       SEND_STRING(SS_LALT("d"));  // search
-      _delay_ms(1000);
+      wait_ms(1000);
       SEND_STRING(".dlkfod kod");
-      _delay_ms(400);
+      wait_ms(400);
       SEND_STRING(
         SS_TAP(X_DOWN)
         SS_TAP(X_ENTER)
@@ -88,9 +88,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
     case M_TMSG:
       SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
-      _delay_ms(200);
+      wait_ms(200);
       SEND_STRING("kdam;" SS_TAP(X_ENTER));
-      _delay_ms(100);
+      wait_ms(100);
       SEND_STRING(
         SS_TAP(X_TAB)
         SS_TAP(X_TAB)
