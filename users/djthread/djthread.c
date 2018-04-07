@@ -105,6 +105,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_NEWNOTE:
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_TAP(X_END)))));
       return false;
+    case M_FOCUSVIEW: // focuses opera viewport
+      SEND_STRING(SS_LGUI(SS_LALT("p")));
+      return false;
   }
 
   return process_record_keymap(keycode, record);
