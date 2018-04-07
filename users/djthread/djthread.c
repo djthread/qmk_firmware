@@ -115,6 +115,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_FOCUSVIEW: // focuses opera viewport
       SEND_STRING(SS_LGUI(SS_LALT("p")));
       return false;
+    case M_TILSLASH:
+      SEND_STRING("~[");
+      /* SEND_STRING(SS_LSFT(SS_TAP(X_GRAVE)) "["); */
+      /* if (is_capital) { */
+      /*   SEND_STRING(SS_LSFT(SS_TAP(X_GRAVE)) "["); */
+      /* } else { */
+      /*   SEND_STRING(SS_LSFT(SS_TAP(X_GRAVE))); */
+      /* } */
+      return false;
   }
 
   return process_record_keymap(keycode, record);

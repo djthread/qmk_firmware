@@ -31,6 +31,7 @@ enum custom_keycodes {
   M_SEARCHNOTES,
   M_NEWNOTE,
   M_FOCUSVIEW,
+  M_TILSLASH,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
