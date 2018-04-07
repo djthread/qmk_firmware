@@ -13,6 +13,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
   }
 
+  /*
+  // Check for shift letter (ty planck/bbaserdem)
+  bool is_capital = ( keyboard_report->mods &
+      (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT)) ) ^
+      ( keyboard_report->mods & MOD_BIT(KC_CAPS) );
+      */
+
   switch (keycode) {
     case M_CMDBT:
       SEND_STRING(SS_LGUI("`")); return false;
