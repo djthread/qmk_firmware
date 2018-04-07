@@ -40,10 +40,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("j")))); return false;
     case M_MPREV:
       SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("2")))); return false;
-    case M_MNEXT:
-      SEND_STRING(SS_TAP(X_F16)); return false;
     case M_MTOGG:
-      SEND_STRING(SS_TAP(X_F15)); return false;
+      SEND_STRING(SS_LGUI(SS_LALT("1"))); return false;
+      /* SEND_STRING(SS_TAP(X_F15)); return false; */
+    case M_MNEXT:
+      SEND_STRING(SS_LGUI(SS_LALT("2"))); return false;
     case M_TABPREV:
       SEND_STRING(SS_TAP(X_KP_1)); return false;
     case M_TABNEXT:

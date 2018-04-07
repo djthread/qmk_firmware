@@ -77,17 +77,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*  4: MACRO LAYER
    *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
-   * |closenotif|    |      |      |       |      |      |      |      |BREATH| STEP |         |
+   * |closenotif|    |      |      |       |      |      |      |      |BREATH| STEP |  Sleep  |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |         |      |       |     |      |      |      |      |      |DVORAK|      |         |
+   * |         |      |       |     |      |      |      |      |      |DVORAK|      |SleepDisp|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           | TMSG |TTREE |      |      |      |      |      |      |SrchNo|NewNot| RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |   BACK     |  FWD   |       |             |    MUTE      |  Vol-  |         |  Vol+     |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   KEYMAP(
-    M_DISMISSNOTI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, BL_STEP, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TO(5), KC_TRNS, KC_TRNS,
+    M_DISMISSNOTI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_BRTG, BL_STEP, KC_F19,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TO(5), KC_TRNS, KC_F17,
     KC_TRNS, M_TMSG, M_TTREE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_RSTEX,
     M_BACK, M_FWD, KC_TRNS, KC_TRNS, KC__MUTE, KC__VOLDOWN, KC_TRNS, KC__VOLUP),
 
