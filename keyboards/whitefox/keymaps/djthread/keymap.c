@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * |        |Des|Exp|WLe|WRi|WMx|WNM|   |   |   |   |      |PgU|VoD|
      * |---------------------------------------------------------------|
-     * |TPre|TNex|    |                       |    |    |  |Hom|PgD|End|
+     * |    |    |    |                       |    |    |  |Hom|PgD|End|
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
@@ -62,28 +62,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,KC_TRNS,KC_MS_BTN2,KC_MS_UP,KC_MS_BTN1,KC_MS_WH_UP,KC_PGUP,KC_HOME,KC_UP,KC_END,M_FOCUSVIEW,KC_TRNS,KC_TRNS,KC_DEL,     KC_MUTE,\
         KC_TRNS,KC_MS_BTN3,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_MS_WH_DOWN,KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,M_MTOGG,M_MNEXT,KC_TRNS,     KC_VOLU,\
         KC_TRNS,M_DESKTOP,M_EXPOSE,M_WLEFT,M_WRIGHT,M_WMAX,M_WNEXTMON,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,     KC_PGUP,KC_VOLD,\
-        M_TABPREV,M_TABNEXT,KC_TRNS,               KC_TRNS,          KC_TRNS,KC_TRNS,     KC_HOME,KC_PGDN,KC_END  \
+        KC_TRNS,KC_TRNS,KC_TRNS,               KC_TRNS,          KC_TRNS,KC_TRNS,     KC_HOME,KC_PGDN,KC_END  \
     ),
 
     /* Layer 2
      * ,---------------------------------------------------------------.
      * |Res|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
      * |---------------------------------------------------------------|
-     * |     |   |   |   |   |   |   |   |   |   |   |WTL|WTR|     |   |
+     * |     |   |   |   |   |   |   |   |   |   |   |WTL|WTR|RSTEX|   |
      * |---------------------------------------------------------------|
      * |      |   |   |   |   |   |   |   |   |   |WBL|WBR|        |   |
      * |---------------------------------------------------------------|
      * |        |   |   |   |   |   |   |   |   |Sea|New| Lock |   |   |
      * |---------------------------------------------------------------|
-     * |    |    |    |          Back         | Fwd|    |  |   |   |   |
+     * |TPre|TNex|    |          Back         | Fwd|    |  |   |   |   |
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
         RESET,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,KC_TRNS,KC_TRNS,\
-        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,KC_TRNS,     KC_TRNS,\
+        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,M_RSTEX,     KC_TRNS,\
         KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,KC_TRNS,     KC_TRNS,\
         KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_SEARCHNOTES,M_NEWNOTE,M_LOCK,     KC_TRNS,KC_TRNS,\
-        KC_TRNS,KC_TRNS,KC_TRNS,               M_BACK,          M_FWD,KC_TRNS,     KC_TRNS,KC_TRNS,KC_TRNS  \
+        M_TABPREV,M_TABNEXT,KC_TRNS,               M_BACK,          M_FWD,KC_TRNS,     KC_TRNS,KC_TRNS,KC_TRNS  \
     ),
 };
 

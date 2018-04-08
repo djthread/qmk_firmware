@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |  TABPREV   |TABNEXT|M_MPREV|  M_MTOGG    |    M_MNEXT   | BRIGH- | BRIGH+  |            |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
-  [_BONUS] = KEYMAP(
+  KEYMAP(
     KC_TRNS, KC_TRNS, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS, M_WTL, M_WTR, M_LOCK,
     KC_TRNS, KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_TRNS, KC_TRNS, KC_TRNS, M_WBL, M_WBR, M_BUILDINST,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
