@@ -25,9 +25,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Layer 0: Default Layer
      * ,---------------------------------------------------------------.
-     * | ` |  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|   |   |
+     * | ` |  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|Zoo|Hom|
      * |---------------------------------------------------------------|
-     * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|Zoo|
+     * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|End|
      * |---------------------------------------------------------------|
      * |L1/Esc|  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '|L1/Enter|PgU|
      * |---------------------------------------------------------------|
@@ -37,8 +37,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
-        KC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS,KC_TRNS, KC_TRNS, \
-        KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC,     M_ZOOM, \
+        KC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS,M_ZOOM, KC_HOME, \
+        KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC,     KC_END, \
     LT(1, KC_ESC),KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,LT(1, KC_ENT),      KC_PGUP, \
         KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,     KC_UP,  KC_PGDN, \
         KC_LCTL,KC_LALT,KC_LGUI,               KC_SPC,           KC_RGUI,MO(2),                              KC_LEFT,KC_DOWN,KC_RGHT \
@@ -50,19 +50,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * |     |   |Bn2|MUp|Bn1|MWU|PgU|Hom| Up|End|FoV|   |   |  Del|Mut|
      * |---------------------------------------------------------------|
-     * |      |Bn3|MLe|MDn|MRi|MWD|PgD|Lef|Dow|Rig|MuT|MuN|        |VoU|
+     * |      |Bn3|MLe|MDn|MRi|MWD|PgD|Lef|Dow|Rig|MTo|MNe|        |VoU|
      * |---------------------------------------------------------------|
-     * |        |Des|Exp|WLe|WRi|WMx|WNM|   |   |   |   |      |PgU|VoD|
+     * |        |Des|Exp|WLe|WRi|WMx|WNM|   |   |   |   |      |   |VoD|
      * |---------------------------------------------------------------|
-     * |    |    |    |                       |    |    |  |Hom|PgD|End|
+     * |    |    |    |                       |    |    |  |   |   |   |
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
         M_DISMISSNOTI,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_TRNS,KC_F14,KC_F15,\
         KC_TRNS,KC_TRNS,KC_MS_BTN2,KC_MS_UP,KC_MS_BTN1,KC_MS_WH_UP,KC_PGUP,KC_HOME,KC_UP,KC_END,M_FOCUSVIEW,KC_TRNS,KC_TRNS,KC_DEL,     KC_MUTE,\
         KC_TRNS,KC_MS_BTN3,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_MS_WH_DOWN,KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,M_MTOGG,M_MNEXT,KC_TRNS,     KC_VOLU,\
-        KC_TRNS,M_DESKTOP,M_EXPOSE,M_WLEFT,M_WRIGHT,M_WMAX,M_WNEXTMON,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,     KC_PGUP,KC_VOLD,\
-        KC_TRNS,KC_TRNS,KC_TRNS,               KC_TRNS,          KC_TRNS,KC_TRNS,     KC_HOME,KC_PGDN,KC_END  \
+        KC_TRNS,M_DESKTOP,M_EXPOSE,M_WLEFT,M_WRIGHT,M_WMAX,M_WNEXTMON,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,     KC_TRNS,KC_VOLD,\
+        KC_TRNS,KC_TRNS,KC_TRNS,               KC_TRNS,          KC_TRNS,KC_TRNS,                         KC_TRNS,KC_TRNS,KC_TRNS  \
     ),
 
     /* Layer 2
