@@ -62,14 +62,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |  CMD-` |   |  |   "  |   {  |   }  |   _  |   +  | HOME | PGDN |  END |   *  | FOCUSVIEW|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |NAVIGATION |DESKT |EXPOSE| WLEFT|WRIGHT| WMAX|WNXMON|      |      |S-PgUp|S-PgDn |       |
+   * |NAVIGATION |DESKT |EXPOSE| WLEFT|WRIGHT| WMAX|WNXMON|GOLEFT|GORIGH|S-PgUp|S-PgDn |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |         |        |       |           |     ZOOM       |          |           |          |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_SHIFTED] = KEYMAP(
     KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_PGUP, KC_LPRN, KC_RPRN, KC_DEL,
     M_CMDBT, KC_PIPE, KC_DQUO, KC_LCBR, KC_RCBR, KC_UNDS, KC_PLUS, KC_HOME, KC_PGDN, KC_END, KC_ASTR, M_FOCUSVIEW,
-    TO(_NAVIGATION), M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, KC_TRNS, KC_TRNS, M_S_PGUP, M_S_PGDN, KC_TRNS,
+    TO(_NAVIGATION), M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_GOLEFT, M_GORIGHT, M_S_PGUP, M_S_PGDN, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_ZOOM, KC_TRNS, KC_TRNS, KC_TRNS),
 
   /*  3: MACRO LAYER
