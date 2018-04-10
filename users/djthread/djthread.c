@@ -63,7 +63,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_DISMISSNOTI:
       SEND_STRING(SS_LCTRL(SS_LALT(SS_LGUI(SS_LSFT("h"))))); return false;
     case M_RSTEX:  // restart elixir
-      SEND_STRING(SS_LCTRL(SS_LALT("k")));  // switch to iterm
+      SEND_STRING(SS_LCTRL(SS_LGUI("k")));  // show/hide iterm
+      SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("a"))));  // switch to "app" iterm
       wait_ms(250);
       SEND_STRING(SS_LCTRL("\\")      // ctrl-\ kills erlang
         SS_TAP(X_UP) SS_TAP(X_ENTER)  // recall + execute last command
@@ -125,6 +126,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI("j")); return false;
     case M_CMD_TAB:
       SEND_STRING(SS_LGUI(SS_TAP(X_TAB))); return false;
+    case M_APPTERM:
+      SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("a"))));  // switch to "app" iterm
+      return false;
   }
 
   return process_record_keymap(keycode, record);

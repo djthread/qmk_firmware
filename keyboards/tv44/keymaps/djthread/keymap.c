@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |closenotif|Step |Breath|      |      |      |      |      |      |SeepDi| Sleep|  Lock   |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |         |      |       |     | WTL  | WTR  |      |      |      |DVORAK|      |BUILDINST|
+   * |         |AppTrm|       |     | WTL  | WTR  |      |      |      |DVORAK|      |BUILDINST|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           | TMSG |TTREE |      | WBL  | WBR  |      |SrchNo|NewNot|MTOGG |MNEXT | RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_MACRO] = KEYMAP(
     M_DISMISSNOTI, BL_STEP, BL_BRTG, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F17, KC_F19, M_LOCK,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, TO(_DVORAK), KC_TRNS, M_BUILDINST,
+    KC_TRNS, M_APPTERM, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, TO(_DVORAK), KC_TRNS, M_BUILDINST,
     KC_TRNS, M_TMSG, M_TTREE, KC_TRNS, M_WBL, M_WBR, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
     KC_F14, KC_F15, KC__MUTE, KC__VOLDOWN, KC__VOLUP, KC_TRNS, KC_TRNS, TO(_NAVIGATION)),
 
