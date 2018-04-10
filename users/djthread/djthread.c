@@ -115,6 +115,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_FOCUSVIEW: // focuses opera viewport
       SEND_STRING(SS_LGUI(SS_LALT("p")));
       return false;
+    case M_S_PGUP:
+      SEND_STRING(SS_LSFT(SS_TAP(X_PGUP))); return false;
+    case M_S_PGDN:
+      SEND_STRING(SS_LSFT(SS_TAP(X_PGDOWN))); return false;
+    case M_CMD_W:
+      SEND_STRING(SS_LGUI(",")); return false;
+    case M_CMD_H:
+      SEND_STRING(SS_LGUI("j")); return false;
+    case M_CMD_TAB:
+      SEND_STRING(SS_LGUI(SS_TAP(X_TAB))); return false;
   }
 
   return process_record_keymap(keycode, record);

@@ -31,6 +31,11 @@ enum custom_keycodes {
   M_SEARCHNOTES,
   M_NEWNOTE,
   M_FOCUSVIEW,
+  M_S_PGUP,
+  M_S_PGDN,
+  M_CMD_W,
+  M_CMD_H,
+  M_CMD_TAB,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
