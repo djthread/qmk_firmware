@@ -126,9 +126,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI("j")); return false;
     case M_CMD_TAB:
       SEND_STRING(SS_LGUI(SS_TAP(X_TAB))); return false;
-    case M_APPTERM:
-      SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("a"))));  // switch to "app" iterm
-      return false;
+    case M_APPTERM:  // switch to "app" iterm
+      SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("a")))); return false;
+    case M_GOLEFT:
+      SEND_STRING(SS_LGUI(SS_LSFT(SS_TAP(X_MINUS)))); return false;
+    case M_GORIGHT:
+      SEND_STRING(SS_LGUI(SS_LSFT(SS_TAP(X_EQUAL)))); return false;
   }
 
   return process_record_keymap(keycode, record);

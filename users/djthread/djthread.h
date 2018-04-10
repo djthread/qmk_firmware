@@ -37,6 +37,8 @@ enum custom_keycodes {
   M_CMD_H,
   M_CMD_TAB,
   M_APPTERM,
+  M_GOLEFT,
+  M_GORIGHT,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
