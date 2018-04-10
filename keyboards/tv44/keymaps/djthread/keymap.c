@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |closenotif|Step |Breath|      |      |      |      |      |      |SeepDi| Sleep|  Lock   |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |         |      |       |     | WTL  | WTR  |      |      |      |DVORAK|      |         |
+   * |         |      |       |     | WTL  | WTR  |      |      |      |DVORAK|      |BUILDINST|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           | TMSG |TTREE |      | WBL  | WBR  |      |SrchNo|NewNot|MTOGG |MNEXT | RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
@@ -85,26 +85,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_MACRO] = KEYMAP(
     M_DISMISSNOTI, BL_STEP, BL_BRTG, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F17, KC_F19, M_LOCK,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, TO(6), KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, TO(_DVORAK), KC_TRNS, M_BUILDINST,
     KC_TRNS, M_TMSG, M_TTREE, KC_TRNS, M_WBL, M_WBR, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
-    KC_F14, KC_F15, KC__MUTE, KC__VOLDOWN, KC__VOLUP, KC_TRNS, KC_TRNS, TO(5)),
+    KC_F14, KC_F15, KC__MUTE, KC__VOLDOWN, KC__VOLUP, KC_TRNS, KC_TRNS, TO(_NAVIGATION)),
 
   /*  4: NAVIGATION LAYER
    *
    * ,---------+------+-----+------+------+------+-------+------+------+------+------+---------.
-   * | CMD-h   |CMD-w |MBTN2| MUP  |MBTN1 |MWHUP | PgUp  | Home |  Up  | End  |      | S-PgUp  |
+   * | CMD-h   |CMD-w |MBTN2| MUP  |MBTN1 |MWHUP | PgUp  | Home |  Up  | End  |S-PgUp|  Home   |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * | QWERTY  |MBTN3 |MLEFT |MDOWN |MRIGHT|MWHDN | PgDn | Left | Down | Right|      | S-PgDn  |
+   * | QWERTY  |MBTN3 |MLEFT |MDOWN |MRIGHT|MWHDN | PgDn | Left | Down | Right|S-PgDn|  End    |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  |       |
+   * |           |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  | PgUp  |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * | TABPREV| TABNEXT |CMD-TAB |    BACK      |     FWD      | QWERTY  |         |           |
+   * | TABPREV| TABNEXT |CMD-TAB |    BACK      |     FWD      | QWERTY  |         |   PgDn    |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_NAVIGATION] = KEYMAP(
-    M_CMD_H, M_CMD_W, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_TRNS, M_S_PGUP,
-    TO(_QWERTY), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_TRNS, M_S_PGDN,
-    KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_TRNS,
-    M_TABPREV, M_TABNEXT, M_CMD_TAB, M_BACK, M_FWD, TO(_QWERTY), KC_TRNS, KC_TRNS),
+    M_CMD_H, M_CMD_W, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_PGUP, KC_HOME, KC_UP, KC_END, M_S_PGUP, KC_HOME,
+    TO(_QWERTY), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_S_PGDN, KC_END,
+    KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, M_S_PGUP,
+    M_TABPREV, M_TABNEXT, M_CMD_TAB, M_BACK, M_FWD, TO(_QWERTY), KC_NO, M_S_PGDN),
 
 
 
