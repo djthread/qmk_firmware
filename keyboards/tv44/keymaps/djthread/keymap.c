@@ -5,7 +5,7 @@ enum minivan_layers {
   _QWERTY,
   _NUMBERS,
   _SHIFTED,
-  _MACRO,
+  _FUNCTION,
   _NAVIGATION,
 
   _DVORAK,
@@ -30,13 +30,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |   Shift   |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | Shift |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * |  Ctrl  |  Alt  |   Cmd   |  SHIFTED/Ent  |    Space    |  Cmd   |   MACRO  |  NAVIGATI  |
+   * |  Ctrl  |  Alt  |   Cmd   |  SHIFTED/Ent  |    Space    |  Cmd   | FUNCTION |  NAVIGATI  |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_QWERTY] = KEYMAP(
     KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,
     LT(_NUMBERS, KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, LT(_NUMBERS, KC_QUOT),
     KC_LSFT /*KC_LSFT*/, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT /*SFT_T(KC_ENT)*/,
-    KC_LCTL, KC_LALT, KC_LGUI, LT(_SHIFTED, KC_ENT), KC_SPC, KC_RGUI, MO(_MACRO), MO(_NAVIGATION)),
+    KC_LCTL, KC_LALT, KC_LGUI, LT(_SHIFTED, KC_ENT), KC_SPC, KC_RGUI, MO(_FUNCTION), MO(_NAVIGATION)),
 
   /*  1: NUMBERS LAYER
    *
@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TO(_NAVIGATION), M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_GOLEFT, M_GORIGHT, M_S_PGUP, M_S_PGDN, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_ZOOM, KC_TRNS, KC_TRNS, KC_TRNS),
 
-  /*  3: MACRO LAYER
+  /*  3: FUNCTION LAYER
    *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |closenotif|Step |Breath|      |      |      |      |      |      |SeepDi| Sleep|  Lock   |
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |   Brigh-   | Brigh+ | Mute  |    Vol-     |     Vol+     |        |         | NAVIGATION|
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
-  [_MACRO] = KEYMAP(
+  [_FUNCTION] = KEYMAP(
     M_DISMISSNOTI, BL_STEP, BL_BRTG, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F17, KC_F19, M_LOCK,
     KC_TRNS, M_APPTERM, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, TO(_DVORAK), KC_TRNS, M_BUILDINST,
     KC_TRNS, M_TMSG, M_TTREE, KC_TRNS, M_WBL, M_WBR, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
@@ -116,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * | Shift     |   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |Sft/Ent|
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * |   Ctrl     |  Alt   |  Gui  | Shifted/Ent |    Space     |  GUi   |  MACRO  |  BONUS    |
+   * |   Ctrl     |  Alt   |  Gui  | Shifted/Ent |    Space     |  GUi   |FUNCTION |  BONUS    |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_DVORAK] = KEYMAP(
     KC_TAB, KC_QUOT, KC_COMM, KC_DOT, KC_P, KC_Y, KC_F, KC_G, KC_C, KC_R, KC_L, KC_BSPC,
