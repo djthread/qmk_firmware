@@ -16,6 +16,8 @@ enum custom_keycodes {
   M_WTR,
   M_WBL,
   M_WBR,
+  M_WTOP,
+  M_WBOTTOM,
   M_MPREV,
   M_MTOGG,
   M_MNEXT,
