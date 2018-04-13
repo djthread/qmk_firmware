@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* NAVIGATION LAYER
      * ,---------------------------------------------------------------.
-     * |   | F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|   |Br-|Br+|
+     * |CmH| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|   |Br-|Br+|
      * |---------------------------------------------------------------|
-     * | CmH |CmW|Bn2|MUp|Bn1|MWU|PgU|Hom| Up|End|FoV|   |   |  Del|Mut|
+     * | CmW |CmT|Bn2|MUp|Bn1|MWU|PgU|Hom| Up|End|FoV|MTo|Mne|  Del|Mut|
      * |---------------------------------------------------------------|
      * |      |Bn3|MLe|MDn|MRi|MWD|PgD|Lef|Dow|Rig|CmT|   |        |VoU|
      * |---------------------------------------------------------------|
@@ -64,8 +64,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
-        KC_TRNS,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_TRNS,KC_F14,KC_F15,\
-        M_CMD_H,M_CMD_W,KC_MS_BTN2,KC_MS_UP,KC_MS_BTN1,KC_MS_WH_UP,KC_PGUP,KC_HOME,KC_UP,KC_END,M_FOCUSVIEW,KC_TRNS,KC_TRNS,KC_DEL,     KC_MUTE,\
+        M_CMD_H,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_TRNS,KC_F14,KC_F15,\
+        M_CMD_W,M_CMD_TAB,KC_MS_BTN2,KC_MS_UP,KC_MS_BTN1,KC_MS_WH_UP,KC_PGUP,KC_HOME,KC_UP,KC_END,M_FOCUSVIEW,M_MTOGG,M_MNEXT,KC_DEL,     KC_MUTE,\
         KC_TRNS,KC_MS_BTN3,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_MS_WH_DOWN,KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,M_CMD_TAB,KC_TRNS,KC_TRNS,     KC_VOLU,\
         KC_TRNS,M_DESKTOP,M_EXPOSE,M_WLEFT,M_WRIGHT,M_WMAX,M_WNEXTMON,M_GOLEFT,M_GORIGHT,M_S_PGUP,M_S_PGDN,KC_TRNS,     KC_TRNS,KC_VOLD,\
         M_TABPREV,M_TABNEXT,M_CMD_TAB,               KC_TRNS,          M_BACK,M_FWD,                         KC_TRNS,KC_TRNS,KC_TRNS  \
@@ -75,20 +75,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,---------------------------------------------------------------.
      * |ClN|   |   |   |   |   |   |   |   |   |   |   |   |SlD|Sle|   |
      * |---------------------------------------------------------------|
-     * |     |   |   |   |   |   |   |   |   |   |   |WTL|WTR|     |   |
+     * |     |   |   |   |   |   |   |   |   |   |   |WTL|WTR|Reset|   |
      * |---------------------------------------------------------------|
-     * |      |ApT|   |   |WTL|WTR|   |   |   |   |WBL|WBR|        |   |
+     * |      |ApT|   |   |WTL|WTR|   |   |   |   |WBL|WBR|        |WTo|
      * |---------------------------------------------------------------|
-     * |        |   |   |   |WBL|WBR|   |Sea|New|MTo|Mne| RSTEX|   |   |
+     * |        |   |   |   |WBL|WBR|   |Sea|New|MTo|Mne| RSTEX|   |WBo|
      * |---------------------------------------------------------------|
      * |    |    |    |                       |    |    |  |   |   |   |
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
         M_DISMISSNOTI,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F17,KC_F19,KC_TRNS,\
-        KC_TRNS,M_APPTERM,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,KC_TRNS,     KC_TRNS,\
-        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,KC_TRNS,     KC_TRNS,\
-        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,KC_TRNS,M_SEARCHNOTES,M_NEWNOTE,M_MTOGG,M_MNEXT,M_RSTEX,     KC_TRNS,KC_TRNS,\
+        KC_TRNS,M_APPTERM,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,RESET,     KC_TRNS,\
+        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,KC_TRNS,     M_WTOP,\
+        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,KC_TRNS,M_SEARCHNOTES,M_NEWNOTE,M_MTOGG,M_MNEXT,M_RSTEX,     KC_TRNS,M_WBOTTOM,\
         KC_TRNS,KC_TRNS,KC_TRNS,               KC_TRNS,          KC_TRNS,KC_TRNS,     KC_TRNS,KC_TRNS,KC_TRNS  \
     ),
 };

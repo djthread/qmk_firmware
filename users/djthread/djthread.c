@@ -45,6 +45,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("h")))); return false;
     case M_WBR:
       SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("j")))); return false;
+    case M_WTOP:
+      SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("m")))); return false;
+    case M_WBOTTOM:
+      SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("n")))); return false;
     case M_MPREV:
       SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("2")))); return false;
     case M_MTOGG:
