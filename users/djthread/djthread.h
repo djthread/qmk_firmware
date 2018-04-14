@@ -28,6 +28,8 @@ enum custom_keycodes {
   M_RSTEX,
   M_DISMISSNOTI,
   M_LOCK,
+  M_OUTLOOK,
+  M_TEAMS,
   M_TMSG,
   M_TTREE,
   M_SEARCHNOTES,

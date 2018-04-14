@@ -77,39 +77,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_LOCK:
       SEND_STRING(SS_LCTRL("`"));
       return false;
-    case M_TTREE:
-      SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
+    case M_OUTLOOK:
+      SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
       wait_ms(200);
-      SEND_STRING("kdam;" SS_TAP(X_ENTER));
-      wait_ms(1000);
-      SEND_STRING(
-        SS_TAP(X_TAB)
-        SS_TAP(X_TAB)
-        SS_TAP(X_TAB)
-        SS_LALT("3")
-      );
-      wait_ms(1000);
-      SEND_STRING(SS_LALT("d"));  // search
-      wait_ms(1000);
-      SEND_STRING(".dlkfod kod");
-      wait_ms(400);
-      SEND_STRING(
-        SS_TAP(X_DOWN)
-        SS_TAP(X_ENTER)
-        SS_TAP(X_TAB)
-        "i");
+      SEND_STRING(SS_LGUI("2"));
+      return false;
+    case M_TEAMS:
+      SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
+      wait_ms(200);
+      SEND_STRING(SS_LGUI("1"));
       return false;
     case M_TMSG:
-      SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
+      SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
       wait_ms(200);
-      SEND_STRING("kdam;" SS_TAP(X_ENTER));
+      SEND_STRING(SS_LGUI("1"));
       wait_ms(100);
-      SEND_STRING(
-        SS_TAP(X_TAB)
-        SS_TAP(X_TAB)
-        SS_TAP(X_TAB)
-        SS_LALT("l")
-      );
+      SEND_STRING(SS_TAP(X_ESCAPE));
+      wait_ms(100);
+      SEND_STRING(SS_LALT("l"));
+      return false;
+    case M_TTREE:
+      SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
+      wait_ms(200);
+      SEND_STRING(SS_LGUI("1"));
+      wait_ms(100);
+      SEND_STRING(SS_TAP(X_ESCAPE));
+      wait_ms(100);
+      SEND_STRING(SS_LALT("d"));
+      wait_ms(100);
+      SEND_STRING(".dlkfod kod");
+      wait_ms(400);
+      SEND_STRING(SS_TAP(X_DOWN) SS_TAP(X_ENTER));
       return false;
     case M_SEARCHNOTES:
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_TAP(X_HOME)))));
