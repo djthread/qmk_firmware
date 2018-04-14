@@ -5,8 +5,8 @@ enum minivan_layers {
   _QWERTY,
   _NUMBERS,
   _SHIFTED,
-  _FUNCTION,
   _NAVIGATION,
+  _FUNCTION,
 
   _DVORAK,
   _DNUMBERS,
@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |   Shift   |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | Shift |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * |  Ctrl  |  Alt  |   Cmd   |  SHIFTED/Ent  |    Space    |  Cmd   | FUNCTION |  NAVIGATI  |
+   * |  Ctrl  |  Alt  |   Cmd   |  SHIFTED/Ent  |    Space    |  Cmd   | FUNCTION | NAVIGATION |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_QWERTY] = KEYMAP(
     KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,
@@ -72,6 +72,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TO(_NAVIGATION), M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_GOLEFT, M_GORIGHT, M_S_PGUP, M_S_PGDN, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_ZOOM, KC_TRNS, KC_TRNS, KC_TRNS),
 
+  /*  NAVIGATION LAYER
+   *
+   * ,---------+------+-----+------+------+------+-------+------+------+------+------+---------.
+   * | CMD-h   |CMD-w |MBTN2| MUP  |MBTN1 |MWHUP | PgUp  | Home |  Up  | End  | Home |  PgUp   |
+   * |---------`------`------`------`------`------`------`------`------`------`------`---------|
+   * | QWERTY  |MBTN3 |MLEFT |MDOWN |MRIGHT|MWHDN | PgDn | Left | Down | Right| End  |  PgDn   |
+   * |----------`------`------`------`------`------`------`------`------`------`------`--------|
+   * |           |BwsNew|  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  |       |
+   * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
+   * | TABPREV| TABNEXT |CMD-TAB |    BACK      |     FWD      | QWERTY  |         |           |
+   *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
+  [_NAVIGATION] = KEYMAP(
+    M_CMD_H, M_CMD_W, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_HOME, M_S_PGUP,
+    TO(_QWERTY), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, M_S_PGDN,
+    KC_TRNS, M_NEWBROWSER, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_NO,
+    M_TABPREV, M_TABNEXT, M_CMD_TAB, M_BACK, M_FWD, TO(_QWERTY), KC_NO, KC_NO),
+
   /*  3: FUNCTION LAYER
    *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
@@ -88,23 +105,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, M_APPTERM, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, TO(_DVORAK), KC_TRNS, M_BUILDINST,
     KC_TRNS, M_TMSG, M_TTREE, KC_TRNS, M_WBL, M_WBR, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
     KC_F14, KC_F15, KC__MUTE, KC__VOLDOWN, KC__VOLUP, KC_TRNS, KC_TRNS, TO(_NAVIGATION)),
-
-  /*  4: NAVIGATION LAYER
-   *
-   * ,---------+------+-----+------+------+------+-------+------+------+------+------+---------.
-   * | CMD-h   |CMD-w |MBTN2| MUP  |MBTN1 |MWHUP | PgUp  | Home |  Up  | End  | Home |  PgUp   |
-   * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * | QWERTY  |MBTN3 |MLEFT |MDOWN |MRIGHT|MWHDN | PgDn | Left | Down | Right| End  |  PgDn   |
-   * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           |BwsNew|  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  |       |
-   * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * | TABPREV| TABNEXT |CMD-TAB |    BACK      |     FWD      | QWERTY  |         |           |
-   *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
-  [_NAVIGATION] = KEYMAP(
-    M_CMD_H, M_CMD_W, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_HOME, M_S_PGUP,
-    TO(_QWERTY), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, M_S_PGDN,
-    KC_TRNS, M_NEWBROWSER, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_NO,
-    M_TABPREV, M_TABNEXT, M_CMD_TAB, M_BACK, M_FWD, TO(_QWERTY), KC_NO, KC_TRNS),
 
 
 
@@ -198,7 +198,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     switch (keycode) {
       case M_BUILDINST:
-        SEND_STRING("sleep .1; and mavd k.44ZhckjodahZhyf" SS_TAP(X_ENTER));
+        SEND_STRING(";pddr e1z alh mavd k.44ZhckjodahZhyf" SS_TAP(X_ENTER));
         reset_keyboard();
         return false;
     }

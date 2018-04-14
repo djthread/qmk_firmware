@@ -10,11 +10,12 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 
 void chrome(void) {
   SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
+  wait_ms(150);
 }
 
 void opera(void) {
   SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("o")))));
-  wait_ms(200);
+  wait_ms(150);
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
