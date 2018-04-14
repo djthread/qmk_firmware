@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift | Up|PgD|
      * |---------------------------------------------------------------|
-     * |Ctrl|Gui |Alt |         Space         |Gui |FUNC|  |Lef|Dow|Rig|
+     * |Ctrl|Alt |Gui |         Space         |Gui |FUNC|  |Lef|Dow|Rig|
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
@@ -52,44 +52,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* NAVIGATION LAYER
      * ,---------------------------------------------------------------.
-     * |CmH| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|   |Br-|Br+|
+     * |CmH| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|   |   |   |
      * |---------------------------------------------------------------|
-     * | CmW |CmT|Bn2|MUp|Bn1|MWU|PgU|Hom| Up|End|FoV|MTo|Mne|  Del|Mut|
+     * | CmW |CmT|Bn2|MUp|Bn1|MWU|PgU|Hom| Up|End|FoV|MTo|MNe|  Del|   |
      * |---------------------------------------------------------------|
-     * |      |Bn3|MLe|MDn|MRi|MWD|PgD|Lef|Dow|Rig|CmT|   |        |VoU|
+     * |QWERTY|Bn3|MLe|MDn|MRi|MWD|PgD|Lef|Dow|Rig|CmT|   |        |   |
      * |---------------------------------------------------------------|
-     * |        |Des|Exp|WLe|WRi|WMx|WNM|GoL|GoR|S-U|S-D|      |   |VoD|
+     * |        |Des|Exp|WLe|WRi|WMx|WNM|GoL|GoR|S-U|S-D|      |Fwd|   |
      * |---------------------------------------------------------------|
-     * |TabP|TabN|CmdT|                       |Back| Fwd|  |   |   |   |
+     * |    |    |    |                       |QWER|    |  |TbP|Bac|TbN|
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
-        M_CMD_H,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_TRNS,KC_F14,KC_F15,\
-        M_CMD_W,M_CMD_TAB,KC_MS_BTN2,KC_MS_UP,KC_MS_BTN1,KC_MS_WH_UP,KC_PGUP,KC_HOME,KC_UP,KC_END,M_FOCUSVIEW,M_MTOGG,M_MNEXT,KC_DEL,     KC_MUTE,\
-        KC_TRNS,KC_MS_BTN3,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_MS_WH_DOWN,KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,M_CMD_TAB,KC_TRNS,KC_TRNS,     KC_VOLU,\
-        KC_TRNS,M_DESKTOP,M_EXPOSE,M_WLEFT,M_WRIGHT,M_WMAX,M_WNEXTMON,M_GOLEFT,M_GORIGHT,M_S_PGUP,M_S_PGDN,KC_TRNS,     KC_TRNS,KC_VOLD,\
-        M_TABPREV,M_TABNEXT,M_CMD_TAB,               KC_TRNS,          M_BACK,M_FWD,                         KC_TRNS,KC_TRNS,KC_TRNS  \
+        M_CMD_H,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_TRNS,KC_TRNS,KC_TRNS,\
+        M_CMD_W,M_CMD_TAB,KC_MS_BTN2,KC_MS_UP,KC_MS_BTN1,KC_MS_WH_UP,KC_PGUP,KC_HOME,KC_UP,KC_END,M_FOCUSVIEW,M_MTOGG,M_MNEXT,KC_DEL,     KC_TRNS,\
+        TO(_QWERTY),KC_MS_BTN3,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_MS_WH_DOWN,KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,M_CMD_TAB,KC_TRNS,KC_TRNS,     KC_TRNS,\
+        KC_TRNS,M_DESKTOP,M_EXPOSE,M_WLEFT,M_WRIGHT,M_WMAX,M_WNEXTMON,M_GOLEFT,M_GORIGHT,M_S_PGUP,M_S_PGDN,KC_TRNS,     M_FWD,KC_TRNS,\
+        KC_TRNS,KC_TRNS,KC_TRNS,               KC_TRNS,          TO(_QWERTY),KC_TRNS,                         M_TABPREV,M_BACK,M_TABNEXT  \
     ),
 
     /* FUNCTION LAYER
      * ,---------------------------------------------------------------.
-     * |ClN|   |   |   |   |   |   |   |   |   |   |   |   |SlD|Sle|   |
+     * |ClN|   |   |   |   |   |   |   |   |   |   |   |   |SlD|Sle|Loc|
      * |---------------------------------------------------------------|
-     * |     |   |   |   |   |   |   |   |   |   |   |WTL|WTR|Reset|   |
+     * |     |   |   |   |   |   |   |   |   |   |   |WTL|WTR|Reset|Mut|
      * |---------------------------------------------------------------|
-     * |      |ApT|   |   |   |   |   |   |   |   |WBL|WBR|        |WTo|
+     * |      |ApT|   |   |   |   |   |   |   |   |WBL|WBR|NAVIGATO|WTo|
      * |---------------------------------------------------------------|
-     * |        |Ema|Tea|Msg|Ven|   |   |Sea|New|MTo|Mne| RSTEX|   |WBo|
+     * |        |Ema|Tea|Msg|Ven|   |   |Sea|New|MTo|MNe| RSTEX|Vo+|WBo|
      * |---------------------------------------------------------------|
-     * |    |    |    |                       |    |    |  |   |   |   |
+     * |    |    |    |                       |    |    |  |Br-|Vo-|Br+|
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
-        M_DISMISSNOTI,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F17,KC_F19,KC_TRNS,\
-        KC_TRNS,M_APPTERM,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,RESET,     KC_TRNS,\
-        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,KC_TRNS,     M_WTOP,\
-        KC_TRNS,M_OUTLOOK,M_TEAMS,M_TMSG,M_TTREE,KC_TRNS,KC_TRNS,M_SEARCHNOTES,M_NEWNOTE,M_MTOGG,M_MNEXT,M_RSTEX,     KC_TRNS,M_WBOTTOM,\
-        KC_TRNS,KC_TRNS,KC_TRNS,               KC_TRNS,          KC_TRNS,KC_TRNS,     KC_TRNS,KC_TRNS,KC_TRNS  \
+        M_DISMISSNOTI,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F17,KC_F19,M_LOCK,\
+        KC_TRNS,M_APPTERM,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,RESET,     KC_MUTE,\
+        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,TO(_NAVIGATION),     M_WTOP,\
+        KC_TRNS,M_OUTLOOK,M_TEAMS,M_TMSG,M_TTREE,KC_TRNS,KC_TRNS,M_SEARCHNOTES,M_NEWNOTE,M_MTOGG,M_MNEXT,M_RSTEX,     KC_VOLU,M_WBOTTOM,\
+        KC_TRNS,KC_TRNS,KC_TRNS,               KC_TRNS,          KC_TRNS,KC_TRNS,     KC_F14,KC_VOLD,KC_F15  \
     ),
 };
 
