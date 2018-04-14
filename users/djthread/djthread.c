@@ -8,6 +8,15 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+void chrome(void) {
+  SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
+}
+
+void opera(void) {
+  SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("o")))));
+  wait_ms(200);
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!record->event.pressed) {
     return true;
@@ -78,17 +87,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL("`"));
       return false;
     case M_OUTLOOK:
-      SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
+      chrome();
       wait_ms(200);
       SEND_STRING(SS_LGUI("2"));
       return false;
     case M_TEAMS:
-      SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
+      chrome();
       wait_ms(200);
       SEND_STRING(SS_LGUI("1"));
       return false;
     case M_TMSG:
-      SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
+      chrome();
       wait_ms(200);
       SEND_STRING(SS_LGUI("1"));
       wait_ms(100);
@@ -97,7 +106,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LALT("l"));
       return false;
     case M_TTREE:
-      SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
+      chrome();
       wait_ms(200);
       SEND_STRING(SS_LGUI("1"));
       wait_ms(100);
@@ -134,6 +143,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI(SS_LSFT(SS_TAP(X_MINUS)))); return false;
     case M_GORIGHT:
       SEND_STRING(SS_LGUI(SS_LSFT(SS_TAP(X_EQUAL)))); return false;
+    case M_NEWBROWSER:
+      opera(); SEND_STRING(SS_LGUI("k")); return false;
+    case M_BROWSERVIEW:
+      opera(); SEND_STRING(SS_LGUI(SS_LALT("p"))); return false;
   }
 
   return process_record_keymap(keycode, record);

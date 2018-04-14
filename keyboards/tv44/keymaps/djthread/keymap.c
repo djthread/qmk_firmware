@@ -43,16 +43,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |   `    |   1  |   2  |   3  |   4  |   5  |   6  |   7  |  UP  |   9  |   0  |          |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |        |   \  |   '  |   [  |   ]  |   -  |   =  | LEFT | DOWN |RIGHT |   8  |          |
+   * |        |   \  | Cmd-H |  [  |   ]  |   -  |   =  | LEFT | DOWN |RIGHT |   8  |          |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  |       |
+   * |           |BwsVie|  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |        |       |         |               |             |        |          |            |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_NUMBERS] = KEYMAP(
     KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_UP, KC_9, KC_0, KC_TRNS,
-    KC_TRNS, KC_BSLS, KC_QUOT, KC_LBRC, KC_RBRC, KC_MINS, KC_EQL, KC_LEFT, KC_DOWN, KC_RGHT, KC_8, KC_TRNS,
-    KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_TRNS,
+    KC_TRNS, KC_BSLS, M_CMD_H, KC_LBRC, KC_RBRC, KC_MINS, KC_EQL, KC_LEFT, KC_DOWN, KC_RGHT, KC_8, KC_TRNS,
+    KC_TRNS, M_BROWSERVIEW, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 
   /*  2: SHIFTED LAYER
@@ -92,19 +92,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*  4: NAVIGATION LAYER
    *
    * ,---------+------+-----+------+------+------+-------+------+------+------+------+---------.
-   * | CMD-h   |CMD-w |MBTN2| MUP  |MBTN1 |MWHUP | PgUp  | Home |  Up  | End  |      |  Home   |
+   * | CMD-h   |CMD-w |MBTN2| MUP  |MBTN1 |MWHUP | PgUp  | Home |  Up  | End  | Home |  PgUp   |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * | QWERTY  |MBTN3 |MLEFT |MDOWN |MRIGHT|MWHDN | PgDn | Left | Down | Right|      |  End    |
+   * | QWERTY  |MBTN3 |MLEFT |MDOWN |MRIGHT|MWHDN | PgDn | Left | Down | Right| End  |  PgDn   |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  | PgUp  |
+   * |           |BwsNew|  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * | TABPREV| TABNEXT |CMD-TAB |    BACK      |     FWD      | QWERTY  |         |   PgDn    |
+   * | TABPREV| TABNEXT |CMD-TAB |    BACK      |     FWD      | QWERTY  |         |           |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_NAVIGATION] = KEYMAP(
-    M_CMD_H, M_CMD_W, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_NO, KC_HOME,
-    TO(_QWERTY), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_END,
-    KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, M_S_PGUP,
-    M_TABPREV, M_TABNEXT, M_CMD_TAB, M_BACK, M_FWD, TO(_QWERTY), KC_NO, M_S_PGDN),
+    M_CMD_H, M_CMD_W, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_HOME, M_S_PGUP,
+    TO(_QWERTY), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, M_S_PGDN,
+    KC_TRNS, M_NEWBROWSER, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_NO,
+    M_TABPREV, M_TABNEXT, M_CMD_TAB, M_BACK, M_FWD, TO(_QWERTY), KC_NO, KC_TRNS),
 
 
 
@@ -198,7 +198,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     switch (keycode) {
       case M_BUILDINST:
-        SEND_STRING("mavd k.44ZhckjodahZhyf" SS_TAP(X_ENTER));
+        SEND_STRING("sleep .1; and mavd k.44ZhckjodahZhyf" SS_TAP(X_ENTER));
         reset_keyboard();
         return false;
     }
