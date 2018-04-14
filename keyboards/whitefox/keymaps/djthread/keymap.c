@@ -77,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * |     |   |   |   |   |   |   |   |   |   |   |WTL|WTR|Reset|   |
      * |---------------------------------------------------------------|
-     * |      |ApT|   |   |WTL|WTR|   |   |   |   |WBL|WBR|        |WTo|
+     * |      |ApT|   |   |   |   |   |   |   |   |WBL|WBR|        |WTo|
      * |---------------------------------------------------------------|
-     * |        |   |   |   |WBL|WBR|   |Sea|New|MTo|Mne| RSTEX|   |WBo|
+     * |        |Ema|Tea|Msg|Ven|   |   |Sea|New|MTo|Mne| RSTEX|   |WBo|
      * |---------------------------------------------------------------|
      * |    |    |    |                       |    |    |  |   |   |   |
      * `---------------------------------------------------------------'
@@ -87,8 +87,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP_TRUEFOX( \
         M_DISMISSNOTI,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F17,KC_F19,KC_TRNS,\
         KC_TRNS,M_APPTERM,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,RESET,     KC_TRNS,\
-        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,KC_TRNS,     M_WTOP,\
-        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,KC_TRNS,M_SEARCHNOTES,M_NEWNOTE,M_MTOGG,M_MNEXT,M_RSTEX,     KC_TRNS,M_WBOTTOM,\
+        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,KC_TRNS,     M_WTOP,\
+        KC_TRNS,M_OUTLOOK,M_TEAMS,M_TMSG,M_TTREE,KC_TRNS,KC_TRNS,M_SEARCHNOTES,M_NEWNOTE,M_MTOGG,M_MNEXT,M_RSTEX,     KC_TRNS,M_WBOTTOM,\
         KC_TRNS,KC_TRNS,KC_TRNS,               KC_TRNS,          KC_TRNS,KC_TRNS,     KC_TRNS,KC_TRNS,KC_TRNS  \
     ),
 };
