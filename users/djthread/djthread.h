@@ -43,6 +43,8 @@ enum custom_keycodes {
   M_APPTERM,
   M_GOLEFT,
   M_GORIGHT,
+  M_NEWBROWSER,
+  M_BROWSERVIEW,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
