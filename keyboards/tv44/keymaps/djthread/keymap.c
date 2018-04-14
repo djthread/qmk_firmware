@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*  3: FUNCTION LAYER
    *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
-   * |closenotif|Step |Breath|      |      |      |      |      |      |SeepDi| Sleep|  Lock   |
+   * |dismis no| Step |Breath|      |      |      |      |      |      |SeepDi| Sleep|  Lock   |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |         |AppTrm|       |     | WTL  | WTR  |      |      |      |DVORAK|      |BUILDINST|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|

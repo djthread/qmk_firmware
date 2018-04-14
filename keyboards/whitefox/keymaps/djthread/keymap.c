@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* QWERTY LAYER
      * ,---------------------------------------------------------------.
-     * | ` |  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|   |Hom|
+     * | ` |  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|NAV|Hom|
      * |---------------------------------------------------------------|
      * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|End|
      * |---------------------------------------------------------------|
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
-        KC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS,KC_NO, KC_HOME, \
+        KC_GRV, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,KC_EQL, KC_BSLS,TO(_NAVIGATION), KC_HOME, \
         KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSPC,     KC_END, \
     LT(_NAVIGATION, KC_ESC),KC_A,  KC_S,  KC_D,  KC_F,  KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,LT(_NAVIGATION, KC_ENT),KC_PGUP, \
         KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,     KC_UP,  KC_PGDN, \
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * | CmW |CmT|Bn2|MUp|Bn1|MWU|PgU|Hom| Up|End|FoV|MTo|MNe|  Del|   |
      * |---------------------------------------------------------------|
-     * |QWERTY|Bn3|MLe|MDn|MRi|MWD|PgD|Lef|Dow|Rig|CmT|   |        |   |
+     * |QWERTY|CmT|MLe|MDn|MRi|MWD|PgD|Lef|Dow|Rig|   |Zoo|        |   |
      * |---------------------------------------------------------------|
      * |        |Des|Exp|WLe|WRi|WMx|WNM|GoL|GoR|S-U|S-D|      |Fwd|   |
      * |---------------------------------------------------------------|
@@ -66,14 +66,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP_TRUEFOX( \
         M_CMD_H,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_TRNS,KC_TRNS,KC_TRNS,\
         M_CMD_W,M_CMD_TAB,KC_MS_BTN2,KC_MS_UP,KC_MS_BTN1,KC_MS_WH_UP,KC_PGUP,KC_HOME,KC_UP,KC_END,M_FOCUSVIEW,M_MTOGG,M_MNEXT,KC_DEL,     KC_TRNS,\
-        TO(_QWERTY),KC_MS_BTN3,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_MS_WH_DOWN,KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,M_CMD_TAB,KC_TRNS,KC_TRNS,     KC_TRNS,\
+        TO(_QWERTY),M_CMD_TAB,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_MS_WH_DOWN,KC_PGDN,KC_LEFT,KC_DOWN,KC_RGHT,KC_TRNS,M_ZOOM,KC_TRNS,     KC_TRNS,\
         KC_TRNS,M_DESKTOP,M_EXPOSE,M_WLEFT,M_WRIGHT,M_WMAX,M_WNEXTMON,M_GOLEFT,M_GORIGHT,M_S_PGUP,M_S_PGDN,KC_TRNS,     M_FWD,KC_TRNS,\
         KC_TRNS,KC_TRNS,KC_TRNS,               KC_TRNS,          TO(_QWERTY),KC_TRNS,                         M_TABPREV,M_BACK,M_TABNEXT  \
     ),
 
     /* FUNCTION LAYER
      * ,---------------------------------------------------------------.
-     * |ClN|   |   |   |   |   |   |   |   |   |   |   |   |SlD|Sle|Loc|
+     * |DiN|   |   |   |   |   |   |   |   |   |   |   |   |SlD|Sle|Loc|
      * |---------------------------------------------------------------|
      * |     |   |   |   |   |   |   |   |   |   |   |WTL|WTR|Reset|Mut|
      * |---------------------------------------------------------------|
