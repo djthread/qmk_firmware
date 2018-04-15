@@ -62,14 +62,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |  CMD-` |   |  |   "  |   {  |   }  |   _  |   +  | HOME | PGDN |  END |   *  | FOCUSVIEW|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |NAVIGATION |DESKT |EXPOSE| WLEFT|WRIGHT| WMAX|WNXMON|GOLEFT|GORIGH|S-PgUp|S-PgDn |       |
+   * |NAVIGATION |DESKT |EXPOSE| WLEFT|WRIGHT| WMAX|WNXMON|GOLEFT|GORIGH|S-PgUp|S-PgDn |NAVIGAT|
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |         |        |       |           |     ZOOM       |          |           |          |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_SHIFTED] = KEYMAP(
     KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_PGUP, KC_LPRN, KC_RPRN, KC_DEL,
     M_CMDBT, KC_PIPE, KC_DQUO, KC_LCBR, KC_RCBR, KC_UNDS, KC_PLUS, KC_HOME, KC_PGDN, KC_END, KC_ASTR, M_FOCUSVIEW,
-    TO(_NAVIGATION), M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_GOLEFT, M_GORIGHT, M_S_PGUP, M_S_PGDN, KC_TRNS,
+    TO(_NAVIGATION), M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_GOLEFT, M_GORIGHT, M_S_PGUP, M_S_PGDN, TO(_NAVIGATION),
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_ZOOM, KC_TRNS, KC_TRNS, KC_TRNS),
 
   /*  NAVIGATION LAYER
@@ -81,30 +81,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           |BwsNew|  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  |       |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * |        |         |        |    BACK      |     FWD      | QWERTY  |         |           |
+   * |        |         |        |   Tab Left   |  Tab Right   |  Back   |   Fwd   |           |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_NAVIGATION] = KEYMAP(
-    M_CMD_H, M_CMD_W, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_HOME, M_S_PGUP,
-    TO(_QWERTY), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, M_S_PGDN,
-    KC_TRNS, M_NEWBROWSER, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_NO,
-    KC_TRNS, KC_TRNS, KC_TRNS, M_BACK, M_FWD, TO(_QWERTY), KC_NO, KC_NO),
+    M_CMD_H, M_CMD_W, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_HOME, KC_PGUP,
+    TO(_QWERTY), KC_MS_BTN3, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_PGDN,
+    KC_TRNS, M_NEWBROWSER, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, M_TABPREV, M_TABNEXT, M_BACK, M_FWD, KC_TRNS),
 
   /*  3: FUNCTION LAYER
    *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
-   * |dismis no| Step |Breath|      |      |      |      |      |      |SeepDi| Sleep|  Lock   |
+   * |dismis no|      |      |      |      |      |      |      |Step  |SeepDi| Sleep|  Lock   |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |         |AppTrm|       |     | WTL  | WTR  |      |      |      |DVORAK|      |BUILDINST|
+   * |         |AppTrm|Outlook|Teams| WTL  | WTR  |      |      |Breath|DVORAK|      |BUILDINST|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           | TMSG |TTREE |      | WBL  | WBR  |      |SrchNo|NewNot|MTOGG |MNEXT | RSTEX |
+   * |           |TTree | TMsg |      | WBL  | WBR  |      |SrchNo|NewNot|MTOGG |MNEXT | RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
-   * |   Brigh-   | Brigh+ | Mute  |    Vol-     |     Vol+     |        |         | NAVIGATION|
+   * |   Brigh-   | Brigh+ | Mute  |    Vol-     |     Vol+     |        |         |           |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_FUNCTION] = KEYMAP(
-    M_DISMISSNOTI, BL_STEP, BL_BRTG, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F17, KC_F19, M_LOCK,
-    KC_TRNS, M_APPTERM, KC_TRNS, KC_TRNS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, KC_TRNS, TO(_DVORAK), KC_TRNS, M_BUILDINST,
-    KC_TRNS, M_TMSG, M_TTREE, KC_TRNS, M_WBL, M_WBR, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
-    KC_F14, KC_F15, KC__MUTE, KC__VOLDOWN, KC__VOLUP, KC_TRNS, KC_TRNS, TO(_NAVIGATION)),
+    M_DISMISSNOTI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRSNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_F17, KC_F19, M_LOCK,
+    KC_TRNS, M_APPTERM, M_OUTLOOK, M_TEAMS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, BL_BRTG, TO(_DVORAK), KC_TRNS, M_BUILDINST,
+    KC_TRNS, M_TTREE, M_TMSG, KC_TRNS, M_WBL, M_WBR, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
+    KC_F14, KC_F15, KC__MUTE, KC__VOLDOWN, KC__VOLUP, KC_TRNS, KC_TRNS, KC_TRNS),
 
 
 

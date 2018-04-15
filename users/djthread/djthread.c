@@ -10,12 +10,12 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 
 void chrome(void) {
   SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
-  wait_ms(150);
+  wait_ms(200);
 }
 
 void opera(void) {
   SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("o")))));
-  wait_ms(150);
+  wait_ms(200);
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -136,6 +136,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI(",")); return false;
     case M_CMD_H:
       SEND_STRING(SS_LGUI("j")); return false;
+    case M_CMD_Q:
+      SEND_STRING(SS_LGUI("x")); return false;
     case M_CMD_TAB:
       SEND_STRING(SS_LGUI(SS_TAP(X_TAB))); return false;
     case M_APPTERM:  // switch to "app" iterm
