@@ -39,6 +39,7 @@ enum custom_keycodes {
   M_S_PGDN,
   M_CMD_W,
   M_CMD_H,
+  M_CMD_Q,
   M_CMD_TAB,
   M_APPTERM,
   M_GOLEFT,
