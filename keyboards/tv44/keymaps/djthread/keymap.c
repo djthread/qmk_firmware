@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |    ~    |   !  |   @  |   #  |   $  |   %  |   ^  |   &  | PGUP |   (  |   )  |  DELETE |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |  CMD-` |   |  |   "  |   {  |   }  |   _  |   +  | HOME | PGDN |  END |   *  | FOCUSVIEW|
+   * |  CMD-` |   |  |Cmd-T |   {  |   }  |   _  |   +  | HOME | PGDN |  END |   *  | FOCUSVIEW|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |NAVIGATION |DESKT |EXPOSE| WLEFT|WRIGHT| WMAX|WNXMON|GOLEFT|GORIGH|S-PgUp|S-PgDn |NAVIGAT|
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_SHIFTED] = KEYMAP(
     KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_PGUP, KC_LPRN, KC_RPRN, KC_DEL,
-    M_CMDBT, KC_PIPE, KC_DQUO, KC_LCBR, KC_RCBR, KC_UNDS, KC_PLUS, KC_HOME, KC_PGDN, KC_END, KC_ASTR, M_FOCUSVIEW,
+    M_CMDBT, KC_PIPE, M_CMD_TAB, KC_LCBR, KC_RCBR, KC_UNDS, KC_PLUS, KC_HOME, KC_PGDN, KC_END, KC_ASTR, M_FOCUSVIEW,
     TO(_NAVIGATION), M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_GOLEFT, M_GORIGHT, M_S_PGUP, M_S_PGDN, TO(_NAVIGATION),
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, M_ZOOM, KC_TRNS, KC_TRNS, KC_TRNS),
 
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*  3: FUNCTION LAYER
    *
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
-   * |dismis no|ActMon|      |      |      |      |      |      |Step  |SeepDi| Sleep|  Lock   |
+   * |dismis no|ActMon|      |      |      |KbdTrm|      |      |Step  |SeepDi| Sleep|  Lock   |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |         |AppTrm|Outlook|Teams| WTL  | WTR  |      |      |Breath|DVORAK|NewBws|BUILDINST|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |   Brigh-   | Brigh+ | Mute  |    Vol-     |     Vol+     |        |         |           |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_FUNCTION] = KEYMAP(
-    M_DISMISSNOTI, M_ACTIVITYMON, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, KC_F17, KC_F19, M_LOCK,
+    M_DISMISSNOTI, M_ACTIVITYMON, KC_TRNS, KC_TRNS, KC_TRNS, M_KEYBTERM, KC_TRNS, KC_TRNS, BL_STEP, KC_F17, KC_F19, M_LOCK,
     KC_TRNS, M_APPTERM, M_OUTLOOK, M_TEAMS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, BL_BRTG, TO(_DVORAK), M_NEWBROWSER, M_BUILDINST,
     KC_TRNS, M_TTREE, M_TMSG, KC_TRNS, M_WBL, M_WBR, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
     KC_F14, KC_F15, KC__MUTE, KC__VOLDOWN, KC__VOLUP, KC_TRNS, KC_TRNS, KC_TRNS),
@@ -198,7 +198,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     switch (keycode) {
       case M_BUILDINST:
-        SEND_STRING(";pddr e1z alh mavd k.44ZhckjodahZhyf" SS_TAP(X_ENTER));
+        SEND_STRING(";pddr e1z mavd k.44ZhckjodahZhyf" SS_TAP(X_ENTER));
         reset_keyboard();
         return false;
     }

@@ -44,6 +44,7 @@ enum custom_keycodes {
   M_CMD_TAB,
   M_APPTERM,
   M_CHATTERM,
+  M_KEYBTERM,
   M_GOLEFT,
   M_GORIGHT,
   M_NEWBROWSER,
