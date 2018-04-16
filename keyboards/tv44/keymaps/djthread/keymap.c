@@ -94,16 +94,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |dismis no|ActMon|      |      |      |KbdTrm|      |      |Step  |SeepDi| Sleep|  Lock   |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |         |AppTrm|Outlook|Teams| WTL  | WTR  |      |      |Breath|DVORAK|NewBws|BUILDINST|
+   * |         |AppTrm| Teams |Outlo| WTL  | WTR  | WTOP |      |Breath|DVORAK|NewBws|BUILDINST|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           |TTree | TMsg |      | WBL  | WBR  |      |SrchNo|NewNot|MTOGG |MNEXT | RSTEX |
+   * |           |TTree | TMsg |      | WBL  | WBR  | WBOT |SrchNo|NewNot|MTOGG |MNEXT | RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |   Brigh-   | Brigh+ | Mute  |    Vol-     |     Vol+     |        |         |           |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_FUNCTION] = KEYMAP(
     M_DISMISSNOTI, M_ACTIVITYMON, KC_TRNS, KC_TRNS, KC_TRNS, M_KEYBTERM, KC_TRNS, KC_TRNS, BL_STEP, KC_F17, KC_F19, M_LOCK,
-    KC_TRNS, M_APPTERM, M_OUTLOOK, M_TEAMS, M_WTL, M_WTR, KC_TRNS, KC_TRNS, BL_BRTG, TO(_DVORAK), M_NEWBROWSER, M_BUILDINST,
-    KC_TRNS, M_TTREE, M_TMSG, KC_TRNS, M_WBL, M_WBR, KC_TRNS, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
+    KC_TRNS, M_APPTERM, M_TEAMS, M_OUTLOOK, M_WTL, M_WTR, M_WTOP, KC_TRNS, BL_BRTG, TO(_DVORAK), M_NEWBROWSER, M_BUILDINST,
+    KC_TRNS, M_TTREE, M_TMSG, KC_TRNS, M_WBL, M_WBR, M_WBOTTOM, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
     KC_F14, KC_F15, KC__MUTE, KC__VOLDOWN, KC__VOLUP, KC_TRNS, KC_TRNS, KC_TRNS),
 
 
