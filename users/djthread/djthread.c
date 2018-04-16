@@ -128,6 +128,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_FOCUSVIEW: // focuses opera viewport
       SEND_STRING(SS_LGUI(SS_LALT("p")));
       return false;
+    case M_ACTIVITYMON: // focuses opera viewport
+      SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
+      wait_ms(150);
+      SEND_STRING("aikg.gk" SS_TAP(X_ENTER));
+      return false;
     case M_S_PGUP:
       SEND_STRING(SS_LSFT(SS_TAP(X_PGUP))); return false;
     case M_S_PGDN:
@@ -142,6 +147,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI(SS_TAP(X_TAB))); return false;
     case M_APPTERM:  // switch to "app" iterm
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("a")))); return false;
+    case M_CHATTERM:  // switch to "chat" iterm
+      SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("i")))); return false;
     case M_GOLEFT:
       SEND_STRING(SS_LGUI(SS_LSFT(SS_TAP(X_MINUS)))); return false;
     case M_GORIGHT:
