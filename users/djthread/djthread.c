@@ -151,6 +151,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("i")))); return false;
     case M_KEYBTERM:  // switch to "keyboard editing" iterm
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("v")))); return false;
+    case M_GHEGIST:  // run alfred workflow to put clipboard in gist and get url
+      SEND_STRING(SS_LCTRL(SS_LGUI(SS_LALT(SS_LSFT("u"))))); return false;
     case M_GOLEFT:
       SEND_STRING(SS_LGUI(SS_LSFT(SS_TAP(X_MINUS)))); return false;
     case M_GORIGHT:
