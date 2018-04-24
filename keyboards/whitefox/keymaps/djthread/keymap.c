@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* FUNCTION LAYER
      * ,---------------------------------------------------------------.
-     * |DiN|New|   |   |   |   |   |   |   |   |   |   |   |SlD|Sle|Loc|
+     * |DiN|New|   |   |   |   |   |   |   |   |   |   |   |Sle|SlD|Loc|
      * |---------------------------------------------------------------|
      * |     |   |   |   |   |   |   |   |   |   |   |WTL|WTR|Reset|Mut|
      * |---------------------------------------------------------------|
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `---------------------------------------------------------------'
      */
     KEYMAP_TRUEFOX( \
-        M_DISMISSNOTI,M_NEWBROWSER, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F17,KC_F19,M_LOCK,\
+        M_DISMISSNOTI,M_NEWBROWSER, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F19,KC_F17,M_LOCK,\
         KC_TRNS,M_APPTERM,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WTL,M_WTR,RESET,     KC_MUTE,\
         KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,M_WBL,M_WBR,TO(_NAVIGATION),     M_WTOP,\
         KC_TRNS,M_OUTLOOK,M_TEAMS,M_TMSG,M_TTREE,KC_TRNS,KC_TRNS,M_SEARCHNOTES,M_NEWNOTE,M_MTOGG,M_MNEXT,M_RSTEX,     KC_VOLU,M_WBOTTOM,\
