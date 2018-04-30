@@ -32,6 +32,7 @@ enum custom_keycodes {
   M_TEAMS,
   M_TMSG,
   M_TTREE,
+  M_SIFT,
   M_SEARCHNOTES,
   M_NEWNOTE,
   M_FOCUSVIEW,

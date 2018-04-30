@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         M_WLEFT,     M_WRIGHT,    M_WMAX,      M_WNEXTMON,
         M_DESKTOP,   M_EXPOSE,    M_ZOOM,      M_RSTEX,
         M_TABPREV,   M_TABNEXT,   M_MTOGG,     M_MNEXT,
-        KC_NO,       KC_NO,       MO(_ALT_2),  MO(_ALT_1)
+        KC_NO,       M_SIFT,      MO(_ALT_2),  MO(_ALT_1)
     ),
 
     [_ALT_1] = LAYOUT_ortho_4x4(
