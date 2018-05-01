@@ -167,6 +167,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       opera(); SEND_STRING(SS_LGUI("k")); return false;
     case M_BROWSERVIEW:
       opera(); SEND_STRING(SS_LGUI(SS_LALT("p"))); return false;
+    case M_WIN_SHRINK_W:
+      SEND_STRING(SS_LCTRL(SS_LGUI(SS_LALT(SS_LSFT(SS_TAP(X_KP_1)))))); return false;
+    case M_WIN_GROW_W:
+      SEND_STRING(SS_LCTRL(SS_LGUI(SS_LALT(SS_LSFT(SS_TAP(X_KP_2)))))); return false;
   }
 
   return process_record_keymap(keycode, record);

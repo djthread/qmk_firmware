@@ -45,14 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
    * |        |   \  | Cmd-H |  [  |   ]  |   -  |   =  | LEFT | DOWN |RIGHT |   8  |          |
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
-   * |           |BrsVie|  F2  |  F3  |ChatTr|  F5  |  F6  |  F7  |  F8  |  F9  | F10  |       |
+   * |           |BrsVie|  F2  |  F3  |ChatTr|  F5  |  F6  |  F7  |  F8  |  F9  | F10  |  App  |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
    * |        |       |         |    Tab Prev   |   Tab Next  |        |          |            |
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_NUMBERS] = KEYMAP(
     KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_UP, KC_9, KC_0, KC_TRNS,
     KC_TRNS, KC_BSLS, M_CMD_H, KC_LBRC, KC_RBRC, KC_MINS, KC_EQL, KC_LEFT, KC_DOWN, KC_RGHT, KC_8, KC_TRNS,
-    KC_TRNS, KC_F1, KC_F2, KC_F3, M_CHATTERM, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_TRNS,
+    KC_TRNS, KC_F1, KC_F2, KC_F3, M_CHATTERM, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, M_APPTERM,
     KC_TRNS, KC_TRNS, KC_TRNS, M_TABPREV, M_TABNEXT, KC_TRNS, KC_TRNS, KC_TRNS),
 
   /*  2: SHIFTED LAYER
@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,---------+------+------+------+------+------+------+------+------+------+------+---------.
    * |dismis no|ActMon|      |      |      |KbdTrm|      |GHEGis|Step  |SeepDi| Sleep|  Lock   |
    * |---------`------`------`------`------`------`------`------`------`------`------`---------|
-   * |         |AppTrm| Teams |Outlo| WTL  | WTR  | WTOP |      |Breath|DVORAK|NewBws|BUILDINST|
+   * |         |      | Teams |Outlo| WTL  | WTR  | WTOP |      |Breath|DVORAK|NewBws|BUILDINST|
    * |----------`------`------`------`------`------`------`------`------`------`------`--------|
    * |           |TTree | TMsg |      | WBL  | WBR  | WBOT |SrchNo|NewNot|MTOGG |MNEXT | RSTEX |
    * |-----------`------`------`------`------`-----'-------`------`------`------`------`-------|
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *  `-------+---------+--------+-----^^^------+-----^^^------+---------+------+------+-------' */
   [_FUNCTION] = KEYMAP(
     M_DISMISSNOTI, M_ACTIVITYMON, KC_TRNS, KC_TRNS, KC_TRNS, M_KEYBTERM, KC_TRNS, M_GHEGIST, BL_STEP, KC_F17, KC_F19, M_LOCK,
-    KC_TRNS, M_APPTERM, M_TEAMS, M_OUTLOOK, M_WTL, M_WTR, M_WTOP, KC_TRNS, BL_BRTG, TO(_DVORAK), M_NEWBROWSER, M_BUILDINST,
+    KC_TRNS, KC_TRNS, M_TEAMS, M_OUTLOOK, M_WTL, M_WTR, M_WTOP, KC_TRNS, BL_BRTG, TO(_DVORAK), M_NEWBROWSER, M_BUILDINST,
     KC_TRNS, M_TTREE, M_TMSG, KC_TRNS, M_WBL, M_WBR, M_WBOTTOM, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT, M_RSTEX,
     KC_F14, KC_F15, KC__MUTE, KC__VOLDOWN, KC__VOLUP, KC_TRNS, KC_TRNS, KC_TRNS),
 

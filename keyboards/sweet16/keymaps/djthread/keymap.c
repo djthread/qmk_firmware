@@ -7,7 +7,8 @@ enum sweet16_layers {
   _ALT_2,
   _PER_NAV,  // PERSISTENT
   _PER_NAV_ALT,
-  _PER_MOUSE,
+  _PER_WINDOW,
+  //_PER_MOUSE,
   _PER_SYS,
   _PER_WORK,
 };
@@ -19,22 +20,22 @@ enum sweet16_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_ortho_4x4(
         M_WLEFT,     M_WRIGHT,    M_WMAX,      M_WNEXTMON,
-        M_DESKTOP,   M_EXPOSE,    M_ZOOM,      M_RSTEX,
-        M_TABPREV,   M_TABNEXT,   M_MTOGG,     M_MNEXT,
-        KC_NO,       M_SIFT,      MO(_ALT_2),  MO(_ALT_1)
+        M_TABPREV,   M_TABNEXT,   M_ZOOM,      M_RSTEX,
+        M_BACK,      M_FWD,       M_MTOGG,     M_MNEXT,
+        M_CMD_TAB,   M_CMDBT,     MO(_ALT_2),  MO(_ALT_1)
     ),
 
     [_ALT_1] = LAYOUT_ortho_4x4(
-        TO(_PER_NAV),TO(_PER_MOUSE),TO(_PER_SYS),OSL(_PER_WORK),
+        TO(_PER_NAV),TO(_PER_WINDOW),TO(_PER_SYS),OSL(_PER_WORK),
         M_WTL,       M_WTR,       M_WTOP,      M_BUILDINST,
         M_WBL,       M_WBR,       M_WBOTTOM,   M_MPREV,
-        M_BACK,      M_FWD,       M_CMD_TAB,   KC_NO
+        M_DESKTOP,   M_EXPOSE,    M_CMD_TAB,   KC_NO
     ),
 
     [_ALT_2] = LAYOUT_ortho_4x4(
         M_BROWSERVIEW,KC_F2,      KC_F3,     KC_F4,
         KC_F5,       KC_F6,       KC_F7,     KC_F8,
-        KC_F9,       KC_F10,      M_NEWBROWSER,M_LOCK,
+        M_CMD_H,     M_CMD_W,     M_NEWBROWSER,M_LOCK,
         TO(_BASE),   TO(_PER_NAV),KC_NO,     TO(_ALT_2)
     ),
 
@@ -52,12 +53,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TO(_BASE),    KC_NO,       KC_NO,       KC_NO
     ),
 
+    [_PER_WINDOW] = LAYOUT_ortho_4x4(
+        KC_MS_BTN2,  KC_MS_UP,    M_WIN_SHRINK_W,  M_WIN_GROW_W,
+        KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT, KC_MS_WH_DOWN,
+        KC_NO,       KC_NO,       KC_NO,       KC_NO,
+        TO(_BASE),   KC_NO,       KC_NO,       KC_NO
+    ),
+
+    /*
     [_PER_MOUSE] = LAYOUT_ortho_4x4(
         KC_MS_BTN2,  KC_MS_UP,    KC_MS_BTN1,  KC_MS_WH_UP,
         KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT, KC_MS_WH_DOWN,
         KC_NO,       KC_NO,       KC_NO,       KC_NO,
         TO(_BASE),   KC_NO,       KC_NO,       KC_NO
     ),
+    */
 
     [_PER_SYS] = LAYOUT_ortho_4x4(
         KC_F15,      KC__VOLUP,   KC_NO,       KC_NO,
@@ -68,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_PER_WORK] = LAYOUT_ortho_4x4(
         M_TEAMS,     M_TTREE,     M_TMSG,      KC_NO,
-        M_OUTLOOK,   KC_NO,       KC_NO,       KC_NO,
+        M_OUTLOOK,   M_SIFT,      KC_NO,       KC_NO,
         KC_A,        KC_B,        KC_C,        KC_NO,
         TO(_BASE),   KC_NO,       KC_NO,       KC_NO
     ),
