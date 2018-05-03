@@ -51,6 +51,7 @@ enum custom_keycodes {
   M_GORIGHT,
   M_NEWBROWSER,
   M_BROWSERVIEW,
+  M_BROWSERREFRESH,
   M_WIN_SHRINK_W,
   M_WIN_GROW_W,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
