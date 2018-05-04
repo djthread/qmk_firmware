@@ -20,20 +20,20 @@ enum sweet16_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_ortho_4x4(
         M_WLEFT,     M_WRIGHT,    M_WMAX,      M_WNEXTMON,
-        M_TABPREV,   M_TABNEXT,   M_ZOOM,      M_RSTEX,
-        M_BACK,      KC_F3,       M_APPTERM,   M_BROWSERREFRESH,
+        M_TABPREV,   M_TABNEXT,   KC_F5,       M_BROWSERREFRESH,
+        M_APPTERM,   KC_F2,       KC_F3,       M_RSTEX,
         M_CMD_TAB,   M_CMDBT,     MO(_ALT_2),  MO(_ALT_1)
     ),
 
     [_ALT_1] = LAYOUT_ortho_4x4(
         TO(_PER_NAV),TO(_PER_WINDOW),TO(_PER_SYS),OSL(_PER_WORK),
-        M_BACK,      M_FWD,       M_WTOP,      M_BUILDINST,
-        M_WBL,       M_WBR,       M_WBOTTOM,   M_MPREV,
-        M_DESKTOP,   M_EXPOSE,    M_CMD_TAB,   KC_NO
+        M_BACK,      M_FWD,       KC_NO,       M_BUILDINST,
+        M_TEAMS,     M_OUTLOOK,   M_SIFT,      M_MPREV,
+        M_TTREE,     M_TMSG,      KC_NO,       KC_NO
     ),
 
     [_ALT_2] = LAYOUT_ortho_4x4(
-        M_BROWSERVIEW,KC_F2,      KC_F3,     KC_F4,
+        M_BROWSERVIEW,KC_F2,      M_MTOGG,   M_MNEXT,
         KC_F5,       KC_F6,       KC_F7,     KC_F8,
         M_CMD_H,     M_CMD_W,     M_NEWBROWSER,M_LOCK,
         TO(_BASE),   TO(_PER_NAV),KC_NO,     TO(_ALT_2)
@@ -90,7 +90,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
       case M_BUILDINST:
         SEND_STRING("mavd ;,ddk16ZhckjodahZa.ohfhd" SS_TAP(X_ENTER));
-        _delay_ms(2000);
+        _delay_ms(200);
         reset_keyboard();
         return false;
     }
