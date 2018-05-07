@@ -54,8 +54,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_PER_WINDOW] = LAYOUT_ortho_4x4(
-        KC_MS_BTN2,  KC_MS_UP,    M_WIN_SHRINK_W,  M_WIN_GROW_W,
-        KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT, KC_MS_WH_DOWN,
+        KC_NO,       KC_NO,       M_WIN_SHRINK_W,  M_WIN_GROW_W,
+        KC_NO,       KC_NO,       KC_NO,       KC_NO,
         KC_NO,       KC_NO,       KC_NO,       KC_NO,
         TO(_BASE),   KC_NO,       KC_NO,       KC_NO
     ),
