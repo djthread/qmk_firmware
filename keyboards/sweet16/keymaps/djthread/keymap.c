@@ -20,13 +20,13 @@ enum sweet16_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_ortho_4x4(
         M_WLEFT,     M_WRIGHT,    M_WMAX,      M_WNEXTMON,
-        M_TABPREV,   M_TABNEXT,   KC_F5,       M_BROWSERREFRESH,
-        M_APPTERM,   KC_F2,       KC_F3,       M_RSTEX,
+        M_TABPREV,   M_TABNEXT,   M_BROWSERREFRESH, M_RSTEX,
+        KC_F1,       M_APPTERM,   KC_F2,       KC_F3,
         M_CMD_TAB,   M_CMDBT,     MO(_ALT_2),  MO(_ALT_1)
     ),
 
     [_ALT_1] = LAYOUT_ortho_4x4(
-        TO(_PER_NAV),TO(_PER_WINDOW),TO(_PER_SYS),OSL(_PER_WORK),
+        TO(_PER_NAV),TO(_PER_WINDOW),TO(_PER_SYS),TO(_PER_WORK),
         M_BACK,      M_FWD,       KC_NO,       M_BUILDINST,
         M_TEAMS,     M_OUTLOOK,   M_SIFT,      M_MPREV,
         M_TTREE,     M_TMSG,      KC_NO,       KC_NO
@@ -60,6 +60,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TO(_BASE),   KC_NO,       KC_NO,       KC_NO
     ),
 
+    [_PER_SYS] = LAYOUT_ortho_4x4(
+        KC_F15,      KC__VOLUP,   KC_NO,       M_DISMISSNOTI,
+        KC_F14,      KC__VOLDOWN, KC_NO,       KC_NO,
+        KC_NO,       KC_NO,       KC_NO,       KC_NO,
+        TO(_BASE),   KC_NO,       KC_NO,       KC_NO
+    ),
+
+    [_PER_WORK] = LAYOUT_ortho_4x4(
+        M_TEAMS,     M_TMSG,      M_TTREE,     KC_NO,
+        M_OUTLOOK,   M_SIFT,      KC_NO,       KC_NO,
+        KC_A,        KC_B,        KC_C,        KC_NO,
+        TO(_BASE),   KC_NO,       KC_NO,       KC_NO
+    ),
+
     /*
     [_PER_MOUSE] = LAYOUT_ortho_4x4(
         KC_MS_BTN2,  KC_MS_UP,    KC_MS_BTN1,  KC_MS_WH_UP,
@@ -68,20 +82,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TO(_BASE),   KC_NO,       KC_NO,       KC_NO
     ),
     */
-
-    [_PER_SYS] = LAYOUT_ortho_4x4(
-        KC_F15,      KC__VOLUP,   KC_NO,       KC_NO,
-        KC_F14,      KC__VOLDOWN, KC_NO,       KC_NO,
-        KC_NO,       KC_NO,       KC_NO,       KC_NO,
-        TO(_BASE),   KC_NO,       KC_NO,       KC_NO
-    ),
-
-    [_PER_WORK] = LAYOUT_ortho_4x4(
-        M_TEAMS,     M_TTREE,     M_TMSG,      KC_NO,
-        M_OUTLOOK,   M_SIFT,      KC_NO,       KC_NO,
-        KC_A,        KC_B,        KC_C,        KC_NO,
-        TO(_BASE),   KC_NO,       KC_NO,       KC_NO
-    ),
 
 };
 
