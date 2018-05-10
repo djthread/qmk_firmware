@@ -157,6 +157,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("i")))); return false;
     case M_KEYBTERM:  // switch to "keyboard editing" iterm
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("v")))); return false;
+    case M_CALENDAR:  // switch to calendar
+      SEND_STRING(SS_LCTRL(SS_LALT("q"))); return false;
     case M_GHEGIST:  // run alfred workflow to put clipboard in gist and get url
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LALT(SS_LSFT("u"))))); return false;
     case M_GOLEFT:
@@ -170,6 +172,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_BROWSERREFRESH:
       opera(); SEND_STRING(SS_LGUI("o"));
       SEND_STRING(SS_LGUI(SS_TAP(X_TAB))); return false;
+    case M_CHROME:
+      SEND_STRING(SS_LCTRL(SS_LALT("n"))); return false;
     case M_WIN_SHRINK_W:
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LALT(SS_LSFT(SS_TAP(X_KP_1)))))); return false;
     case M_WIN_GROW_W:
