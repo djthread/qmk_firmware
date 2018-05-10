@@ -27,15 +27,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ALT_1] = LAYOUT_ortho_4x4(
         TO(_PER_NAV),TO(_PER_WINDOW),TO(_PER_SYS),TO(_PER_WORK),
-        M_BACK,      M_FWD,       KC_NO,       M_BUILDINST,
+        M_BACK,      M_FWD,       M_ZOOM,      M_BUILDINST,
         M_TEAMS,     M_OUTLOOK,   M_SIFT,      M_MPREV,
-        M_TTREE,     M_TMSG,      KC_NO,       KC_NO
+        M_DESKTOP,   M_EXPOSE,    KC_NO,       KC_NO
     ),
 
     [_ALT_2] = LAYOUT_ortho_4x4(
         M_BROWSERVIEW,KC_F2,      M_MTOGG,   M_MNEXT,
         KC_F5,       KC_F6,       KC_F7,     KC_F8,
-        M_CMD_H,     M_CMD_W,     M_NEWBROWSER,M_LOCK,
+        M_CMD_H,     M_CMD_W,     M_NEWBROWSER,M_KEYBTERM,
         TO(_BASE),   TO(_PER_NAV),KC_NO,     TO(_ALT_2)
     ),
 
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_PER_WORK] = LAYOUT_ortho_4x4(
         M_TEAMS,     M_TMSG,      M_TTREE,     KC_NO,
         M_OUTLOOK,   M_SIFT,      KC_NO,       KC_NO,
-        KC_A,        KC_B,        KC_C,        KC_NO,
+        M_CALENDAR,  KC_B,        KC_C,        KC_NO,
         TO(_BASE),   KC_NO,       KC_NO,       KC_NO
     ),
 
