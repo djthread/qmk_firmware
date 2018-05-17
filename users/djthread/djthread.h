@@ -42,7 +42,7 @@ enum custom_keycodes {
   M_CMD_W,
   M_CMD_H,
   M_CMD_Q,
-  M_CMD_TAB,
+  M_CMDTAB,
   M_APPTERM,
   M_CHATTERM,
   M_KEYBTERM,
