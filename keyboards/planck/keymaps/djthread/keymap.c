@@ -31,6 +31,10 @@ enum planck_keycodes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    /*
+    Applications     ____    ____   Work
+    Window Mgt       ____    ____   System
+    */
   [_BASE] = LAYOUT_planck_grid_90deg_right(
     T_L1, T_L2, T_L3, T_L4, T_L5, T_L6, M_BUILDINST, T_L8,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
@@ -38,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /**/M_DESKTOP, M_EXPOSE, M_CMD_W, M_CMD_H,
     KC_NO, M_ZOOM, M_MTOGG, M_MNEXT,
     M_WLEFT,     M_WRIGHT,    M_WMAX,      M_WNEXTMON,
-    M_TABPREV,   M_TABNEXT,   M_BROWSERREFRESH, M_RSTEX,
+    M_TABPREV,   M_TABNEXT,   KC_NO,       KC_NO,
     KC_PGUP,     KC_PGDN,     KC_NO,       KC_NO,
     M_CMDTAB,    M_CMDBT,     KC_NO,       MO(_ALT)
   ),
@@ -102,8 +106,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     M_TEAMS,     M_TMSG,      M_TTREE,     KC_NO,
     M_OUTLOOK,   KC_NO,       KC_NO,       KC_NO,
-    M_CALENDAR,  M_SIFT,      KC_NO,       KC_NO,
-    TO(_BASE),   KC_NO,       KC_NO,       KC_NO,
+    M_CALENDAR,  M_SIFT,      M_BROWSERREFRESH, M_RSTEX,
+    KC_NO,       KC_NO,       KC_NO,       KC_NO,
 /**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
@@ -114,8 +118,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_NO,       KC_NO,       M_WIN_SHRINK_W,  M_WIN_GROW_W,
     KC_NO,       KC_NO,       KC_NO,       KC_NO,
-    KC_NO,       KC_NO,       KC_NO,       KC_NO,
-    TO(_BASE),   KC_NO,       KC_NO,       KC_NO,
+    M_WTL,       M_WTR,       KC_NO,       KC_NO,
+    M_WBL,       M_WBR,       KC_NO,       KC_NO,
 /**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
