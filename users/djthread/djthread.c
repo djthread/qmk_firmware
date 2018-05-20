@@ -18,6 +18,11 @@ void opera(void) {
   wait_ms(200);
 }
 
+void alfred(void) {
+  SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
+  wait_ms(150);
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!record->event.pressed) {
     return true;
@@ -66,6 +71,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       /* SEND_STRING(SS_TAP(X_F15)); return false; */
     case M_MNEXT:
       SEND_STRING(SS_LGUI(SS_LALT("2"))); return false;
+    case M_RPI:
+      alfred(); SEND_STRING("Eorg" SS_TAP(X_ENTER)); return false;
     case M_TABPREV:
       SEND_STRING(SS_TAP(X_KP_1)); return false;
     case M_TABNEXT:
@@ -135,8 +142,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI(SS_LALT("p")));
       return false;
     case M_ACTIVITYMON: // focuses opera viewport
-      SEND_STRING(SS_LGUI(SS_TAP(X_SPACE)));
-      wait_ms(150);
+      alfred();
       SEND_STRING("aikg.gk" SS_TAP(X_ENTER));
       return false;
     case M_S_PGUP:
@@ -178,6 +184,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LALT(SS_LSFT(SS_TAP(X_KP_1)))))); return false;
     case M_WIN_GROW_W:
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LALT(SS_LSFT(SS_TAP(X_KP_2)))))); return false;
+    case M_OPERA_SIDEBAR:
+      SEND_STRING(SS_LCTRL(SS_LGUI(";"))); return false;
   }
 
   return process_record_keymap(keycode, record);
