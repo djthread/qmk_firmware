@@ -12,8 +12,9 @@
 
 // place overrides here
 
-#define TAPPING_TERM 140
-#define RETRO_TAPPING
+#define TAPPING_TERM 500
+// #define TAPPING_TERM 140
+// #define RETRO_TAPPING
 // #define PERMISSIVE_HOLD
 
 // #define MOUSEKEY_DELAY 6
