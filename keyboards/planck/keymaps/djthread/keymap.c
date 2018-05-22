@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_MS_BTN2,  KC_MS_UP,    KC_MS_BTN1,  KC_MS_WH_UP,
     KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT, KC_MS_WH_DOWN,
     KC_NO,       KC_NO,       KC_NO,       KC_NO,
-    KC_NO,       KC_NO,       KC_NO,       KC_NO
+    KC_NO,       KC_NO,       KC_NO,       KC_NO,
 /**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
@@ -175,6 +175,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       case T_L5: t_layers_off(); layer_on(_T_L5); return false;
       case T_L6: t_layers_off(); layer_on(_T_L6); return false;
       case T_L7: t_layers_off(); layer_on(_T_L7); return false;
+      case T_L8: t_layers_off(); layer_on(_T_L8); return false;
 
       case M_BUILDINST:
         SEND_STRING("mavd rpalivZhckjodahZhyf" SS_TAP(X_ENTER));
