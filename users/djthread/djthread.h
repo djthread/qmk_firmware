@@ -57,7 +57,6 @@ enum custom_keycodes {
   M_CHROME,
   M_WIN_SHRINK_W,
   M_WIN_GROW_W,
-  M_OPERA_SIDEBAR,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
