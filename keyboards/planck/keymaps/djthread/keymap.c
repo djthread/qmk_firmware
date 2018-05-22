@@ -33,7 +33,7 @@ enum planck_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
     Applications     ____    ____   Work
-    Window Mgt       ____    ____   System
+    Window Mgt       Mouse   ____   System
     */
   [_BASE] = LAYOUT_planck_grid_90deg_right(
     T_L1, T_L2, T_L3, T_L4, T_L5, T_L6, M_BUILDINST, T_L8,
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Applications ALT
   [_T_L1_ALT] = LAYOUT_planck_grid_90deg_right(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    M_OPERA_SIDEBAR, KC_F2,   KC_F3,     KC_F4,
+    M_CHROME,    KC_F2,   KC_F3,     KC_F4,
     KC_F5,       KC_F6,       KC_F7,     KC_F8,
     KC_F10,      KC_TRNS,     KC_TRNS,   KC_TRNS,
     KC_TRNS,     KC_TRNS,     KC_TRNS,   KC_TRNS,
@@ -125,10 +125,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
+  // Mouse
   [_T_L6] = LAYOUT_planck_grid_90deg_right(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_MS_BTN2,  KC_MS_UP,    KC_MS_BTN1,  KC_MS_WH_UP,
+    KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT, KC_MS_WH_DOWN,
+    KC_NO,       KC_NO,       KC_NO,       KC_NO,
+    KC_NO,       KC_NO,       KC_NO,       KC_NO
 /**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
