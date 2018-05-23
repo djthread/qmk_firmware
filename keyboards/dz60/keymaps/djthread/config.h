@@ -12,7 +12,7 @@
 
 // place overrides here
 
-#define TAPPING_TERM 140
+#define TAPPING_TERM 150
 // #define RETRO_TAPPING
 // #define PERMISSIVE_HOLD
 
