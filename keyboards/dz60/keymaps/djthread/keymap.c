@@ -55,8 +55,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         M_DISMISSNOTI, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, _______, _______,
         _______, _______, _______, _______, _______, M_KEYBTERM, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, M_TEAMS, M_OUTLOOK, M_WTL, M_WTR,  M_WTOP, _______, _______, _______, M_NEWBROWSER, _______,     _______,
-        _______, M_TTREE, M_TMSG, _______, M_WBL,  M_WBR,  M_WBOTTOM, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC__VOLUP, _______,
-        _______, _______, _______,      _______, _______, _______,         _______, _______, KC_F14, KC__VOLDOWN, KC_F15
+        _______, M_TTREE, M_TMSG, _______, M_WBL,  M_WBR,  M_WBOTTOM, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC_UP, _______,
+        _______, _______, _______,      _______, _______, _______,         _______, _______, KC_LEFT, KC_DOWN, KC_RIGHT
+        /* _______, M_TTREE, M_TMSG, _______, M_WBL,  M_WBR,  M_WBOTTOM, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC__VOLUP, _______, */
+        /* _______, _______, _______,      _______, _______, _______,         _______, _______, KC_F14, KC__VOLDOWN, KC_F15 */
   ),
 
   [_FN2] = LAYOUT_thread(
