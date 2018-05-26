@@ -26,5 +26,7 @@
 #define MOUSEKEY_MAX_SPEED 3
 #define MOUSEKEY_WHEEL_DELAY 0
 
+#define BACKLIGHT_BREATHING
+
 
 #endif
