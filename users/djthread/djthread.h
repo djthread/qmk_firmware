@@ -59,6 +59,7 @@ enum custom_keycodes {
   M_WIN_GROW_W,
   M_LBCKT2X,
   M_RBCKT2X,
+  M_BARTENDERSHOW,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 

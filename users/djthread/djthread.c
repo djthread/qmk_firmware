@@ -186,6 +186,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL(SS_LGUI(SS_LALT(SS_LSFT(SS_TAP(X_KP_2)))))); return false;
     case M_LBCKT2X: SEND_STRING("--"); return false;
     case M_RBCKT2X: SEND_STRING("=="); return false;
+    case M_BARTENDERSHOW: SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_HOME)))))); return false;
   }
 
   return process_record_keymap(keycode, record);
