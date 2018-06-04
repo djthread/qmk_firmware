@@ -8,6 +8,7 @@ enum fourier_layers {
   _NUMBERS,
   _SHIFTED,
   _NAVIGATION,
+  _NAVIGATION,
   _ARROWS,
   _ARROWS2,
   _FN,
@@ -36,14 +37,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NUMBERS] = MY_LAYOUT(
    KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_UP, KC_9, KC_0, M_CMD_H, _______,
-   _______, KC_BSLS, M_CMDTAB, M_CMDBT, KC_RBRC, KC_MINS, KC_EQL, KC_LEFT, KC_DOWN, KC_RGHT, KC_8, _______,
+   _______, KC_BSLS, M_CMDBT, M_CMDTAB, KC_RBRC, KC_MINS, KC_EQL, KC_LEFT, KC_DOWN, KC_RGHT, KC_8, _______,
    _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, _______,
    _______, _______, _______, M_TABPREV, M_TABNEXT, _______, _______, _______, _______
   ),
 
   [_SHIFTED] = MY_LAYOUT(
     KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_PGUP, KC_LPRN, KC_RPRN, _______, KC_DEL,
-    _______, KC_PIPE, M_CMDTAB, M_CMDBT, KC_RCBR, KC_UNDS, KC_PLUS, KC_HOME, KC_PGDN, KC_END, KC_ASTR, M_FOCUSVIEW,
+    _______, KC_PIPE, M_CMDBT, M_CMDTAB, KC_RCBR, KC_UNDS, KC_PLUS, KC_HOME, KC_PGDN, KC_END, KC_ASTR, M_FOCUSVIEW,
     TO(_NAVIGATION), M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_GOLEFT, M_GORIGHT, M_S_PGUP, M_S_PGDN, TO(_NAVIGATION),
     _______, _______, _______, _______,  M_ZOOM   , M_APPTERM, M_CHROME, _______, _______
   ),
@@ -64,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYS] = MY_LAYOUT(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_ENT,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, TO(_ARROWS), _______, _______
   ),
