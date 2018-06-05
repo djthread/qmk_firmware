@@ -153,6 +153,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI(",")); return false;
     case M_CMD_H:
       SEND_STRING(SS_LGUI("j")); return false;
+    case M_CMD_T:
+      SEND_STRING(SS_LGUI("k")); return false;
     case M_CMD_Q:
       SEND_STRING(SS_LGUI("x")); return false;
     case M_CMDTAB:
