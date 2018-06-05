@@ -44,6 +44,8 @@ enum custom_keycodes {
   M_CMD_H,
   M_CMD_T,
   M_CMD_Q,
+  M_COPY,
+  M_PASTE,
   M_CMDTAB,
   M_APPTERM,
   M_CHATTERM,

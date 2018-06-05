@@ -157,6 +157,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI("k")); return false;
     case M_CMD_Q:
       SEND_STRING(SS_LGUI("x")); return false;
+    case M_COPY:
+      SEND_STRING(SS_LGUI("i")); return false;
+    case M_PASTE:
+      SEND_STRING(SS_LGUI(".")); return false;
     case M_CMDTAB:
       SEND_STRING(SS_LGUI(SS_TAP(X_TAB))); return false;
     case M_APPTERM:  // switch to "app" iterm

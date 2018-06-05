@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     M_KEYBTERM, M_ZOOM, M_MTOGG, M_MNEXT,
     M_WLEFT,     M_WRIGHT,    M_WMAX,      M_WNEXTMON,
     M_TABPREV,   M_TABNEXT,   KC_NO,       KC_NO,
-    KC_PGUP,     KC_PGDN,     KC_NO,       KC_NO,
+    KC_PGUP,     KC_PGDN,     M_COPY,      M_PASTE,
     M_CMDTAB,    M_CMDBT,     KC_NO,       MO(_ALT)
   ),
 
