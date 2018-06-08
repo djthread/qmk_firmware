@@ -22,7 +22,10 @@ enum planck_layers {
   _BASE,
   _ALT,
   _T_L1, _T_L1_ALT,
-  _T_L2, _T_L3, _T_L4, _T_L5, _T_L6, _T_L7, _T_L8,
+  _T_L2,
+  _T_L3,
+  _T_L4, _T_L4_ALT,
+  _T_L5, _T_L6, _T_L7, _T_L8,
 };
 
 enum planck_keycodes {
@@ -36,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     Window Mgt       Mouse   ____   System
     */
   [_BASE] = LAYOUT_planck_grid_90deg_right(
-    T_L1, T_L2, T_L3, T_L4, T_L5, T_L6, M_BUILDINST, T_L8,
+    T_L1, T_L2, T_L3, T_L4, T_L5, M_LOCK, M_BUILDINST, T_L8,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
 /**/M_DESKTOP, M_EXPOSE, M_BARTENDERSHOW, M_CMD_H,
@@ -83,10 +86,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
+  // Mouse
   [_T_L2] = LAYOUT_planck_grid_90deg_right(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_MS_BTN2,  KC_MS_UP,    KC_MS_BTN1,  KC_MS_WH_UP,
+    KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT, KC_MS_WH_DOWN,
+    KC_NO,       KC_NO,       KC_NO,       KC_NO,
+    KC_NO,       KC_NO,       KC_NO,       KC_NO,
 /**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
@@ -107,10 +113,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     M_TEAMS,     M_TMSG,      M_TTREE,     KC_NO,
     M_OUTLOOK,   KC_NO,       M_BROWSERREFRESH, M_RSTEX,
     M_CALENDAR,  M_SIFT,      KC_F1,       M_APPTERM,
-    KC_NO,       KC_NO,       KC_NO,       KC_NO,
+    M_ZULIP,     KC_NO,       KC_NO,       KC_NO,
 /**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(_T_L4_ALT)
+  ),
+
+  // Work ALT
+  [_T_L4_ALT] = LAYOUT_planck_grid_90deg_right(
+    _______, _______, _______, _______, _______, _______, _______, _______,
+    _______,     _______,      _______,     _______,
+    _______,   _______,       _______, _______,
+    _______,  _______,      _______,       _______,
+    _______,     _______,       _______,       _______,
+/**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(_T_L4_ALT)
   ),
 
   // Window Management
@@ -125,13 +143,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
-  // Mouse
   [_T_L6] = LAYOUT_planck_grid_90deg_right(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_MS_BTN2,  KC_MS_UP,    KC_MS_BTN1,  KC_MS_WH_UP,
-    KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT, KC_MS_WH_DOWN,
-    KC_NO,       KC_NO,       KC_NO,       KC_NO,
-    KC_NO,       KC_NO,       KC_NO,       KC_NO,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 /**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS

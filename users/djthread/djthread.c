@@ -94,6 +94,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_LOCK:
       SEND_STRING(SS_LCTRL("`"));
       return false;
+    case M_ZULIP:
+      SEND_STRING(SS_LCTRL(SS_LALT("/")));
+      return false;
     case M_OUTLOOK:
       chrome();
       wait_ms(200);
