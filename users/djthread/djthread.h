@@ -58,6 +58,7 @@ enum custom_keycodes {
   M_NEWBROWSER,
   M_BROWSERVIEW,
   M_BROWSERREFRESH,
+  M_OPERA,
   M_CHROME,
   M_WIN_SHRINK_W,
   M_WIN_GROW_W,

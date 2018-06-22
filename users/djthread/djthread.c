@@ -187,6 +187,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_BROWSERREFRESH:
       opera(); SEND_STRING(SS_LGUI("o"));
       SEND_STRING(SS_LGUI(SS_TAP(X_TAB))); return false;
+    case M_OPERA:
+      opera(); return false;
     case M_CHROME:
       SEND_STRING(SS_LCTRL(SS_LALT("n"))); return false;
     case M_WIN_SHRINK_W:
