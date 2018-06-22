@@ -35,6 +35,8 @@ enum custom_keycodes {
   M_TMSG,
   M_TTREE,
   M_SIFT,
+  M_CIRCLECI,
+  M_HAL9000,
   M_SEARCHNOTES,
   M_NEWNOTE,
   M_FOCUSVIEW,
