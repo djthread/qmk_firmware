@@ -67,6 +67,7 @@ enum custom_keycodes {
   M_LBCKT2X,
   M_RBCKT2X,
   M_BARTENDERSHOW,
+  M_ZOOMQUARTER,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 

@@ -2,6 +2,7 @@
 #include "quantum.h"
 #include "action.h"
 #include "version.h"
+#include "mousekey.h"
 
 __attribute__ ((weak))
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
@@ -206,6 +207,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_LBCKT2X: SEND_STRING("--"); return false;
     case M_RBCKT2X: SEND_STRING("=="); return false;
     case M_BARTENDERSHOW: SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_HOME)))))); return false;
+    case M_ZOOMQUARTER: ;
+/*
+      static report_mouse_t mouse_report = {};
+      mouse_report.x = 0;
+      mouse_report.y = 0;
+      host_mouse_send(&mouse_report);
+      */
+
+      SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("y"))));  // win to top left
+      SEND_STRING(SS_LGUI(SS_LALT(  // zoom
+        SS_TAP(X_RBRACKET) SS_TAP(X_RBRACKET) SS_TAP(X_RBRACKET)
+        SS_TAP(X_RBRACKET) SS_TAP(X_RBRACKET) SS_TAP(X_RBRACKET)
+        SS_TAP(X_RBRACKET) SS_TAP(X_RBRACKET) SS_TAP(X_RBRACKET)
+        SS_TAP(X_RBRACKET)
+      )));
+      return false;
   }
 
   return process_record_keymap(keycode, record);

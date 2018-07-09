@@ -41,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_ALTLAYER] = LAYOUT_thread(
     M_DISMISSNOTI, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_F13, KC_HOME,
     M_CMDTAB, M_CMDBT, _______, _______, M_APPTERM, M_KEYBTERM, _______, _______, M_CHATTERM, _______, _______, M_MTOGG, M_MNEXT, KC_END,
-    M_BARTENDERSHOW, _______, M_TEAMS, M_OUTLOOK, M_WTL, M_WTR,  M_WTOP, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_NEWBROWSER,     KC_PGUP,
-    _______, M_TTREE, M_TMSG, _______, M_WBL,  M_WBR,  M_WBOTTOM, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC_UP, KC_PGDN,
-    _______, _______, _______,      _______, _______, _______,         _______, _______, KC_LEFT, KC_DOWN, KC_RIGHT
+    M_BARTENDERSHOW, _______, _______, _______, M_WTL, M_WTR,  M_WTOP, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_NEWBROWSER,     KC_PGUP,
+    _______, _______, _______, _______, M_WBL,  M_WBR,  M_WBOTTOM, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC_UP, KC_PGDN,
+    _______, _______, _______,      _______, M_ZOOMQUARTER, _______,         _______, _______, KC_LEFT, KC_DOWN, KC_RIGHT
   ),
 
   [_ARROWS] = LAYOUT_thread(
