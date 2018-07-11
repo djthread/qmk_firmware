@@ -24,6 +24,14 @@ void alfred(void) {
   wait_ms(150);
 }
 
+void teams(void) {
+  //chrome();
+  //wait_ms(200);
+  //SEND_STRING(SS_LGUI("1"));
+  SEND_STRING(SS_LCTRL(SS_LALT(SS_LGUI(SS_LSFT(SS_TAP(X_K))))));
+  wait_ms(150);
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!record->event.pressed) {
     return true;
@@ -99,9 +107,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL(SS_LALT("/")));
       return false;
     case M_OUTLOOK:
-      chrome();
-      wait_ms(200);
-      SEND_STRING(SS_LGUI("2"));
+      //chrome();
+      //wait_ms(200);
+      //SEND_STRING(SS_LGUI("2"));
+      SEND_STRING(SS_LCTRL(SS_LALT(SS_LGUI(SS_LSFT(SS_TAP(X_S))))));
       return false;
     case M_SIFT:
       opera();
@@ -118,24 +127,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING("jap9000[" SS_TAP(X_ENTER));
       return false;
     case M_TEAMS:
-      chrome();
-      wait_ms(200);
-      SEND_STRING(SS_LGUI("1"));
+      teams();
       return false;
     case M_TMSG:
-      chrome();
-      wait_ms(200);
-      SEND_STRING(SS_LGUI("1"));
-      wait_ms(100);
+      teams();
       SEND_STRING(SS_TAP(X_ESCAPE));
       wait_ms(100);
       SEND_STRING(SS_LALT("l"));
       return false;
     case M_TTREE:
-      chrome();
-      wait_ms(200);
-      SEND_STRING(SS_LGUI("1"));
-      wait_ms(100);
+      teams();
       SEND_STRING(SS_TAP(X_ESCAPE));
       wait_ms(100);
       SEND_STRING(SS_LALT("d"));
