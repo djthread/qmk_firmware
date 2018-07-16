@@ -25,11 +25,13 @@ void alfred(void) {
 }
 
 void teams(void) {
-  //chrome();
-  //wait_ms(200);
-  //SEND_STRING(SS_LGUI("1"));
+  chrome();
+  wait_ms(200);
+  SEND_STRING(SS_LGUI("1"));
+  /*
   SEND_STRING(SS_LCTRL(SS_LALT(SS_LGUI(SS_LSFT(SS_TAP(X_K))))));
   wait_ms(150);
+  */
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -107,10 +109,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL(SS_LALT("/")));
       return false;
     case M_OUTLOOK:
-      //chrome();
-      //wait_ms(200);
-      //SEND_STRING(SS_LGUI("2"));
-      SEND_STRING(SS_LCTRL(SS_LALT(SS_LGUI(SS_LSFT(SS_TAP(X_S))))));
+      chrome();
+      wait_ms(200);
+      SEND_STRING(SS_LGUI("2"));
+      // SEND_STRING(SS_LCTRL(SS_LALT(SS_LGUI(SS_LSFT(SS_TAP(X_S))))));
       return false;
     case M_SIFT:
       opera();
