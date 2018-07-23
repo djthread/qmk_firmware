@@ -21,6 +21,7 @@
 enum planck_layers {
   _BASE,
   _ALT,
+  _NUMBERS_ENTER,
   _T_L1, _T_L1_ALT,
   _T_L2,
   _T_L3,
@@ -30,6 +31,9 @@ enum planck_layers {
 
 enum planck_keycodes {
   M_BUILDINST = NEW_SAFE_RANGE,
+  M_RPI_PLANCK,
+  M_1_ENT, M_2_ENT, M_3_ENT, M_4_ENT, M_5_ENT,
+  M_6_ENT, M_7_ENT, M_8_ENT, M_9_ENT, M_0_ENT,
   T_L1, T_L2, T_L3, T_L4, T_L5, T_L6, T_L7, T_L8
 };
 
@@ -51,13 +55,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_ALT] = LAYOUT_planck_grid_90deg_right(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-/**/KC_TRNS, KC_TRNS, M_CMD_Q, M_CMD_W,
-    KC_TRNS, KC_TRNS, M_RPI, KC_TRNS,
-    KC_NO,       KC_NO,       KC_NO,       KC_NO,
-    M_BACK,      M_FWD,       KC_NO,       M_BUILDINST,
+/**/KC_TRNS, KC_TRNS, KC_NO,       KC_NO,
+    KC_TRNS, KC_TRNS, M_RPI_PLANCK, KC_TRNS,
+    KC_NO,       KC_NO,       M_CMD_Q,     M_CMD_W,
+    M_BACK,      M_FWD,       KC_NO,       KC_NO,
     KC_HOME,     KC_END,      KC_NO,       KC_NO,
     KC_NO,       KC_NO,       KC_NO,       KC_TRNS
   ),
@@ -173,6 +177,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
+  [_NUMBERS_ENTER] = LAYOUT_planck_grid_90deg_right(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+/**/KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    M_1_ENT,       M_2_ENT,       M_3_ENT,       M_4_ENT,
+    M_5_ENT,      M_6_ENT,       M_7_ENT,       M_8_ENT,
+    M_9_ENT,     M_0_ENT,      KC_NO,       KC_NO,
+    KC_NO,       KC_NO,       KC_NO,       KC_NO
+  ),
+
 };
 
 void t_layers_off(void) {
@@ -192,17 +208,42 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       case T_L7: t_layers_off(); layer_on(_T_L7); return false;
       case T_L8: t_layers_off(); layer_on(_T_L8); return false;
 
+      case M_1_ENT: SEND_STRING("1" SS_TAP(X_ENTER)); return false;
+      case M_2_ENT: SEND_STRING("2" SS_TAP(X_ENTER)); return false;
+      case M_3_ENT: SEND_STRING("3" SS_TAP(X_ENTER)); return false;
+      case M_4_ENT: SEND_STRING("4" SS_TAP(X_ENTER)); return false;
+      case M_5_ENT: SEND_STRING("5" SS_TAP(X_ENTER)); return false;
+      case M_6_ENT: SEND_STRING("6" SS_TAP(X_ENTER)); return false;
+      case M_7_ENT: SEND_STRING("7" SS_TAP(X_ENTER)); return false;
+      case M_8_ENT: SEND_STRING("8" SS_TAP(X_ENTER)); return false;
+      case M_9_ENT: SEND_STRING("9" SS_TAP(X_ENTER)); return false;
+      case M_0_ENT: SEND_STRING("0" SS_TAP(X_ENTER)); return false;
+
+      case M_RPI_PLANCK:
+        SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("k"))));
+        wait_ms(100);
+        SEND_STRING(SS_LCTRL(SS_LGUI("o")));
+        layer_on(_NUMBERS_ENTER);
+        set_oneshot_layer(_NUMBERS_ENTER, ONESHOT_START);
+        //clear_oneshot_layer_state(ONESHOT_PRESSED);
+        //return false;
+        break;
+
       case M_BUILDINST:
         SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("k"))));
         wait_ms(100);
         SEND_STRING(SS_LCTRL(SS_LGUI("m")));
         wait_ms(300);
         SEND_STRING(";pddr e2z mavd rpalivZhckjodahZhyf" SS_TAP(X_ENTER));
-        wait_ms(200);
-        SEND_STRING("mavd rpalivZhckjodahZhyf" SS_TAP(X_ENTER));
-        _delay_ms(200);
         reset_keyboard();
         return false;
+    }
+  } else {
+    switch (keycode) {
+      case M_RPI_PLANCK:
+        clear_oneshot_layer_state(ONESHOT_PRESSED);
+        //return false;
+        break;
     }
   }
 
