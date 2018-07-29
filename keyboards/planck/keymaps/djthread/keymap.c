@@ -193,6 +193,12 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       case T_L8: t_layers_off(); layer_on(_T_L8); return false;
 
       case M_BUILDINST:
+        SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("k"))));
+        wait_ms(100);
+        SEND_STRING(SS_LCTRL(SS_LGUI("m")));
+        wait_ms(300);
+        SEND_STRING(";pddr e2z mavd rpalivZhckjodahZhyf" SS_TAP(X_ENTER));
+        wait_ms(200);
         SEND_STRING("mavd rpalivZhckjodahZhyf" SS_TAP(X_ENTER));
         _delay_ms(200);
         reset_keyboard();

@@ -9,6 +9,10 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+void term(void) {
+  SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("k"))));
+}
+
 void chrome(void) {
   SEND_STRING(SS_LGUI(SS_LALT(SS_LSFT(SS_LCTRL("n")))));
   wait_ms(200);
@@ -83,7 +87,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_MNEXT:
       SEND_STRING(SS_LGUI(SS_LALT("2"))); return false;
     case M_RPI:
-      alfred(); SEND_STRING("Eorg" SS_TAP(X_ENTER)); return false;
+      term(); SEND_STRING(SS_LCTRL(SS_LGUI("o"))); return false;
     case M_TABPREV:
       SEND_STRING(SS_TAP(X_KP_1)); return false;
     case M_TABNEXT:
