@@ -76,6 +76,7 @@ enum custom_keycodes {
   M_PBOT_OFF,
 
   M_ZOOMQUARTER,
+  M_ZOOMAPP,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 

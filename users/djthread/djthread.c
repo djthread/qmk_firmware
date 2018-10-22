@@ -231,6 +231,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_1)))))); return false;
     case M_PBOT_OFF:
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_0)))))); return false;
+    case M_ZOOMAPP:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_KP_5)))))); return false;
     case M_ZOOMQUARTER: ;
 /*
       static report_mouse_t mouse_report = {};

@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     M_DISMISSNOTI, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_F13, KC_HOME,
     M_CMDTAB, M_CMDBT, _______, _______, M_APPTERM, M_KEYBTERM, _______, _______, M_CHATTERM, _______, _______, M_MTOGG, M_MNEXT, KC_END,
     M_BARTENDERSHOW, M_TEAMS, KC_F12, M_OUTLOOK, M_WTL, M_WTR,  M_WTOP, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_NEWBROWSER,     KC_PGUP,
-    _______, _______, _______, _______, M_WBL,  M_WBR,  M_WBOTTOM, _______, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC_UP, KC_PGDN,
+    _______, M_ZOOMAPP, _______, _______, M_WBL,  M_WBR,  M_WBOTTOM, _______, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC_UP, KC_PGDN,
     _______, _______, _______,      _______, M_ZOOMQUARTER, _______,         M_SEARCHNOTES, M_NEWNOTE, KC_LEFT, KC_DOWN, KC_RIGHT
   ),
 
