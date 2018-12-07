@@ -86,6 +86,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       /* SEND_STRING(SS_TAP(X_F15)); return false; */
     case M_MNEXT:
       SEND_STRING(SS_LGUI(SS_LALT("2"))); return false;
+    case M_MSWITCH:
+      SEND_STRING(SS_LCTRL(SS_LGUI(SS_LALT("1")))); return false;
     case M_RPI:
       term(); SEND_STRING(SS_LCTRL(SS_LGUI("o"))); return false;
     case M_TABPREV:

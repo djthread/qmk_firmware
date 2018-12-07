@@ -3,6 +3,7 @@
 
 enum dz60_layers {
   _MAIN,
+  _DVORAK,
   _NAVIGATION,
   _ALTLAYER,
   _ARROWS,
@@ -12,8 +13,7 @@ enum dz60_layers {
   _SYS,
   _WEB,
   _WEB2,
-  _CHOONS,
-  _DVORAK
+  _CHOONS
 };
 
 enum dz60_keycodes {
@@ -27,8 +27,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC,KC_RBRC,KC_BSPC,
     LT(_NAVIGATION, KC_ESC),KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN,KC_QUOT, LT(_NAVIGATION, KC_ENT),
     KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_PGUP,
-    KC_LCTL, KC_LALT, KC_LGUI,     KC_SPC, KC_SPC, LT(_ALTLAYER, KC_SPC),       KC_RGUI, MO(_FN1), MO(_SYS), MO(_FN2), KC_PGDN
+    KC_LCTL, KC_LALT, KC_LGUI,     MO(_NAVIGATION), KC_SPC, LT(_ALTLAYER, KC_SPC),       KC_RGUI, MO(_FN1), MO(_SYS), MO(_FN2), KC_PGDN
+    //KC_LCTL, KC_LALT, KC_LGUI,     KC_SPC, KC_SPC, LT(_ALTLAYER, KC_SPC),       KC_RGUI, MO(_FN1), MO(_SYS), MO(_FN2), KC_PGDN
     //KC_LCTL, KC_LALT, KC_LGUI,     LGUI_T(KC_SPC), KC_SPC, LT(_ALTLAYER, KC_SPC),       KC_RGUI, MO(_FN1), MO(_SYS), MO(_FN2), KC_PGDN
+  ),
+
+  [_DVORAK] = LAYOUT_thread(
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_LBRC, KC_RBRC, _______, _______,
+    _______, KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_SLSH, KC_EQL,  _______,
+    _______, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_MINS, _______,
+    _______, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    _______, _______,
+    _______, _______, _______,      _______, _______,  _______,       _______, _______, _______, _______, _______
   ),
 
   [_NAVIGATION] = LAYOUT_thread(
@@ -64,8 +73,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_FN1] = LAYOUT_thread(
-    M_DISMISSNOTI, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, _______, KC_HOME,
-    _______, _______, _______, M_CHATTERM, M_APPTERM, M_KEYBTERM, _______, _______, _______, _______, _______, M_MTOGG, M_MNEXT, KC_END,
+    M_DISMISSNOTI, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, _______, _______,
+    _______, _______, _______, M_CHATTERM, M_APPTERM, M_KEYBTERM, _______, _______, _______, _______, _______, M_MTOGG, M_MNEXT, M_MSWITCH,
     _______, _______, _______, _______, M_WTL, M_WTR,  M_WTOP, _______, _______, _______, _______, M_NEWBROWSER,     KC_PGUP,
     _______, M_TTREE, M_TMSG, _______, M_WBL,  M_WBR,  M_WBOTTOM, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC_UP, KC_PGDN,
     _______, _______, _______,      _______, _______, M_BACK,         M_FWD, _______, KC_LEFT, KC_DOWN, KC_RIGHT
@@ -109,14 +118,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______,     M_MTOGG,
     _______, _______, _______,      _______, _______, TO(_MAIN),         _______, _______, _______, KC_F8, M_MPREV
-  ),
-
-  [_DVORAK] = LAYOUT_thread(
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_LBRC, KC_RBRC, _______, _______,
-    _______, KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_SLSH, KC_EQL,  _______,
-    _______, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_MINS, _______,
-    _______, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    _______, _______,
-    _______, _______, _______,      _______, _______,  _______,       _______, _______, _______, _______, _______
   )
 };
 

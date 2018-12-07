@@ -21,6 +21,7 @@ enum custom_keycodes {
   M_MPREV,
   M_MTOGG,
   M_MNEXT,
+  M_MSWITCH,
   M_RPI,
   M_TABPREV,
   M_TABNEXT,
