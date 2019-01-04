@@ -113,7 +113,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SS_LGUI(SS_TAP(X_TAB)));      // switch back to previous app
       return false;
     case M_LOCK:
-      SEND_STRING(SS_LCTRL("`"));
+      //SEND_STRING(SS_LCTRL("`"));
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI("p")))));
       return false;
     case M_ZULIP:
       SEND_STRING(SS_LCTRL(SS_LALT("/")));
