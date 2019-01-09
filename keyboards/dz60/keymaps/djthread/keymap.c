@@ -5,7 +5,7 @@ enum dz60_layers {
   _MAIN,
   _DVORAK,
   _NAVIGATION,
-  _ALTLAYER,
+  // _ALTLAYER,
   _ARROWS,
   _ARROWS2,
   _FN1,
@@ -25,9 +25,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MAIN] = LAYOUT_thread(
     KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS,KC_EQL, KC_BSLS, M_CMDTAB,
     KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC,KC_RBRC,KC_BSPC,
-    LT(_NAVIGATION, KC_ESC),KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN,KC_QUOT, LT(_NAVIGATION, KC_ENT),
+    KC_ESC, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN,KC_QUOT, KC_ENT,
+    /* LT(_NAVIGATION, KC_ESC),KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN,KC_QUOT, LT(_NAVIGATION, KC_ENT), */
     KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_PGUP,
-    KC_LCTL, KC_LALT, KC_LGUI,     MO(_NAVIGATION), KC_SPC, LT(_ALTLAYER, KC_SPC),       KC_RGUI, MO(_FN1), MO(_SYS), MO(_FN2), KC_PGDN
+    KC_LCTL, KC_LALT, KC_LGUI,     MO(_NAVIGATION), KC_SPC, MO(_NAVIGATION),       KC_RGUI, MO(_FN1), MO(_SYS), MO(_FN2), KC_PGDN
+    /* KC_LCTL, KC_LALT, KC_LGUI,     LT(_ALTLAYER, KC_SPC), KC_SPC, MO(_NAVIGATION),       KC_RGUI, MO(_FN1), MO(_SYS), MO(_FN2), KC_PGDN */
     //KC_LCTL, KC_LALT, KC_LGUI,     KC_SPC, KC_SPC, LT(_ALTLAYER, KC_SPC),       KC_RGUI, MO(_FN1), MO(_SYS), MO(_FN2), KC_PGDN
     //KC_LCTL, KC_LALT, KC_LGUI,     LGUI_T(KC_SPC), KC_SPC, LT(_ALTLAYER, KC_SPC),       KC_RGUI, MO(_FN1), MO(_SYS), MO(_FN2), KC_PGDN
   ),
@@ -45,9 +47,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     M_CMDTAB, M_CMDBT, KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_MS_WH_UP, KC_PGUP, KC_HOME, KC_UP, KC_END, M_FOCUSVIEW, M_MTOGG, M_MNEXT, KC_DEL,
     _______, M_CMD_H, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_DOWN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, _______, M_ZOOM, _______,
     _______, M_DESKTOP, M_EXPOSE, M_WLEFT, M_WRIGHT, M_WMAX, M_WNEXTMON, M_GOLEFT, M_GORIGHT, M_S_PGUP, M_S_PGDN, M_FWD, M_RSTEX,
-    _______, _______, _______,     M_BUILDINST, _______, TO(_MAIN),         _______, _______, _______, _______, _______
+    _______, _______, _______,     _______, _______, _______,         _______, _______, _______, _______, _______
   ),
 
+/*
   [_ALTLAYER] = LAYOUT_thread(
     M_DISMISSNOTI, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_F13, KC_HOME,
     M_CMDTAB, M_CMDBT, _______, _______, M_APPTERM, M_KEYBTERM, _______, _______, M_CHATTERM, _______, _______, M_MTOGG, M_MNEXT, KC_END,
@@ -55,6 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, M_ZOOMAPP, _______, _______, M_WBL,  M_WBR,  M_WBOTTOM, _______, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC_UP, KC_PGDN,
     _______, _______, _______,      _______, M_ZOOMQUARTER, _______,         M_SEARCHNOTES, M_NEWNOTE, KC_LEFT, KC_DOWN, KC_RIGHT
   ),
+*/
 
   [_ARROWS] = LAYOUT_thread(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
@@ -75,9 +79,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_FN1] = LAYOUT_thread(
     M_DISMISSNOTI, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, _______, _______,
     _______, _______, _______, M_CHATTERM, M_APPTERM, M_KEYBTERM, _______, _______, _______, _______, _______, M_MTOGG, M_MNEXT, M_MSWITCH,
-    _______, _______, _______, _______, M_WTL, M_WTR,  M_WTOP, _______, _______, _______, _______, M_NEWBROWSER,     KC_PGUP,
+    M_BARTENDERSHOW, _______, _______, _______, M_WTL, M_WTR,  M_WTOP, _______, _______, _______, _______, M_NEWBROWSER,     KC_PGUP,
     _______, M_TTREE, M_TMSG, _______, M_WBL,  M_WBR,  M_WBOTTOM, M_SEARCHNOTES, M_NEWNOTE, M_MTOGG, M_MNEXT,     KC_UP, KC_PGDN,
-    _______, _______, _______,      _______, _______, M_BACK,         M_FWD, _______, KC_LEFT, KC_DOWN, KC_RIGHT
+    _______, M_TEAMS, _______,      _______, _______, M_BACK,         M_FWD, _______, KC_LEFT, KC_DOWN, KC_RIGHT
   ),
 
   [_SYS] = LAYOUT_thread(
@@ -91,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_FN2] = LAYOUT_thread(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     TO(_NAVIGATION),
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,     _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, TO(_CHOONS),     KC_HOME,
     _______, _______, _______,      _______, _______, _______,         _______, TO(_WEB), TG(_ARROWS), _______, KC_END
   ),
@@ -126,11 +130,16 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     switch (keycode) {
       case M_BUILDINST:
+        SEND_STRING("ih ~[arr;[xmv\"ygom,aodz alh ;pddr e1z mavd h/60ZhckjodahZhyf" SS_TAP(X_ENTER));
+        /*
+        SEND_STRING(SS_TAP(X_F1));
+        wait_ms(300);
         SEND_STRING(SS_LCTRL(SS_LGUI(SS_LSFT("k"))));
         wait_ms(300);
         SEND_STRING(SS_LCTRL(SS_LGUI("m")));
         wait_ms(300);
         SEND_STRING(";pddr e1z mavd h/60ZhckjodahZhyf" SS_TAP(X_ENTER));
+        */
         reset_keyboard();
         return false;
     }
