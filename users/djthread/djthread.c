@@ -150,15 +150,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
     case M_TTREE:
       teams();
-<<<<<<< HEAD
       // SEND_STRING(SS_TAP(X_ESCAPE));
       // wait_ms(100);
       SEND_STRING(SS_LGUI(SS_LSFT("u")));
-=======
-      SEND_STRING(SS_TAP(X_ESCAPE));
-      wait_ms(100);
-      SEND_STRING(SS_LALT("d"));
->>>>>>> trying to get led to work
+      // SEND_STRING(SS_TAP(X_ESCAPE));
+      // wait_ms(100);
+      // SEND_STRING(SS_LALT("d"));
       wait_ms(100);
       SEND_STRING(".dlkfod kod");
       wait_ms(400);
@@ -237,10 +234,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case M_RBCKT2X: SEND_STRING("=="); return false;
     case M_BARTENDERSHOW: SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_HOME)))))); return false;
     case M_PBOT_ON:
-      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_1)))))); return false;
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_9)))))); return false;
     case M_PBOT_OFF:
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_0)))))); return false;
-<<<<<<< HEAD
+    case M_PBOT_Z1_ON:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_1)))))); return false;
+    case M_PBOT_Z2_ON:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_2)))))); return false;
+    case M_PBOT_Z3_ON:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_3)))))); return false;
+    case M_PBOT_Z4_ON:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_4)))))); return false;
+    case M_PBOT_Z1_OFF:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_5)))))); return false;
+    case M_PBOT_Z2_OFF:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_6)))))); return false;
+    case M_PBOT_Z3_OFF:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_7)))))); return false;
+    case M_PBOT_Z4_OFF:
+      SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_8)))))); return false;
     case M_ZOOMAPP:
       SEND_STRING(SS_LCTRL(SS_LSFT(SS_LALT(SS_LGUI(SS_TAP(X_KP_5)))))); return false;
 /*
@@ -248,7 +260,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       / *
 =======
     case M_ZOOMQUARTER: ;
-/*
+/ *
 >>>>>>> trying to get led to work
       static report_mouse_t mouse_report = {};
       mouse_report.x = 0;
@@ -257,8 +269,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 <<<<<<< HEAD
       * /
 =======
-      */
->>>>>>> trying to get led to work
+      * /
 
       SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("y"))));  // win to top left
       SEND_STRING(SS_LGUI(SS_LALT(  // zoom
@@ -268,10 +279,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SS_TAP(X_RBRACKET)
       )));
       return false;
-<<<<<<< HEAD
 */
-=======
->>>>>>> trying to get led to work
   }
 
   return process_record_keymap(keycode, record);

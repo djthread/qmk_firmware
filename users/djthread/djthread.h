@@ -75,13 +75,16 @@ enum custom_keycodes {
   M_BARTENDERSHOW,
   M_PBOT_ON,
   M_PBOT_OFF,
-
-<<<<<<< HEAD
   // M_ZOOMQUARTER,
   M_ZOOMAPP,
-=======
-  M_ZOOMQUARTER,
->>>>>>> trying to get led to work
+  M_PBOT_Z1_ON,
+  M_PBOT_Z2_ON,
+  M_PBOT_Z3_ON,
+  M_PBOT_Z4_ON,
+  M_PBOT_Z1_OFF,
+  M_PBOT_Z2_OFF,
+  M_PBOT_Z3_OFF,
+  M_PBOT_Z4_OFF,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 
