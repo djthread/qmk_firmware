@@ -18,8 +18,8 @@ enum custom_keycodes {
   M_WBR,
   M_WTOP,
   M_WBOTTOM,
-  M_MPREV,
-  M_MTOGG,
+  // M_MPREV,
+  // M_MTOGG,
   M_MNEXT,
   M_MSWITCH,
 //   M_RPI,
@@ -85,6 +85,11 @@ enum custom_keycodes {
 //   M_PBOT_Z2_OFF,
 //   M_PBOT_Z3_OFF,
 //   M_PBOT_Z4_OFF,
+  M_TEXTMATE,
+  M_VOX,
+  M_DASH,
+  M_ENPASS,
+  M_ENPASS_POP,
   NEW_SAFE_RANGE  // use "NEW_SAFE_RANGE" for keymap specific codes
 };
 

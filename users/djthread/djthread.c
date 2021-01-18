@@ -79,10 +79,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("m")))); return false;
     case M_WBOTTOM:
       SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("n")))); return false;
-    case M_MPREV:
-      SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("2")))); return false;
-    case M_MTOGG:
-      SEND_STRING(SS_LGUI(SS_LALT("1"))); return false;
+    /* case M_MPREV: */
+    /*   SEND_STRING(SS_LSFT(SS_LGUI(SS_LALT("2")))); return false; */
+    /* case M_MTOGG: */
+    /*   SEND_STRING(SS_LGUI(SS_LALT("1"))); return false; */
       /* SEND_STRING(SS_TAP(X_F15)); return false; */
     case M_MNEXT:
       SEND_STRING(SS_LGUI(SS_LALT("2"))); return false;
@@ -211,6 +211,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       SEND_STRING(SS_LGUI(SS_LSFT(SS_TAP(X_MINUS)))); return false;
     case M_GORIGHT:
       SEND_STRING(SS_LGUI(SS_LSFT(SS_TAP(X_EQUAL)))); return false;
+    case M_TEXTMATE:
+      SEND_STRING(SS_LCTRL(SS_LALT("h"))); return false;
+    case M_VOX:
+      SEND_STRING(SS_LCTRL(SS_LALT(SS_TAP(X_DOT)))); return false;
+    case M_DASH:
+      SEND_STRING(SS_TAP(X_F12)); return false;
+    case M_ENPASS:
+      SEND_STRING(SS_LCTRL(SS_LALT(SS_TAP(X_BSLS)))); return false;
+    case M_ENPASS_POP:
+      SEND_STRING(SS_LGUI(SS_LALT(SS_TAP(X_BSLS)))); return false;
 //     case M_NEWBROWSER:
 //       opera(); SEND_STRING(SS_LGUI("k")); return false;
 //     case M_BROWSERVIEW:
